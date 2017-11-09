@@ -1,0 +1,13 @@
+<div class="card">
+	<div class="card-header">{{name}} - {{breed}}</div>
+	<img [src]='picture' alt="{{name}} photo" class="card-img-top">
+	<div class="card-body">
+		<p class="card-text">{{description}}</p>
+		<p class="card-text">{{age}}</p>
+		<div  class="good" *ngIf='fixed else elseBlock'>Fixed</div>
+		<ng-template #elseBlock >
+		<div class="bad">unFixed</div>
+	</ng-template>
+	</div>
+	<div class="card-footer"></div>
+</div>
