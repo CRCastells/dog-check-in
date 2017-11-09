@@ -17,11 +17,8 @@ export class DogShowComponent implements OnInit {
 		picture: ''
 	}
 
-		
-
   constructor() { }
 
   ngOnInit() {
   }
-
 }
