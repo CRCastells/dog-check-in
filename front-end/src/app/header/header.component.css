@@ -1,0 +1,34 @@
+#header {
+	display: inline;
+	
+	color: black;
+}
+
+h3 {
+	font-family: 'Sigmar One';
+	float: left;
+}
+
+.search-bar {
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+#search {
+	font-family: 'Sigmar One';
+	border: 2px solid black;
+	border-radius: 5px;
+	height: 35px;
+	width: 400px;
+}
+
+#button {
+	font-family: 'Sigmar One';
+}
+
+.routerLinks {
+	float: right;
+	font-family: 'Sigmar One';
+	margin-left: 50px;
+	margin-right: 50px;
+}
