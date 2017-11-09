@@ -1,18 +1,20 @@
 //Connect
 var Sequelize = require('sequelize');
+require('dotenv').config();
+var sequelize = new Sequelize(process.env.DATABASE_URL);
 
-var sequelize = new Sequelize('postgres://<username>@localhost:5432/<database>');
 
 // Export Sequelize for seed and dbSetup
 module.exports.Sequelize = Sequelize;
 module.exports.sequelize = sequelize;
 
 // Declare varibales and import models
-const User = sequelize.imports("./user");
-const Park = sequelize.imports("./park");
-const Dog = sequelize.imports("./dog");
-const Connection = sequelize.imports("./connection");
-const Checkin = sequelize.imports("./checkin");
+const User = sequelize.import("./user");
+const Park = sequelize.import("./park");
+const Dog = sequelize.import("./dog");
+const Follower = sequelize.import("./user");
+const Checkin = sequelize.import("./checkin");
+const Connection = sequelize.import('./connection');
 
 // Establish database relationships
 Dog.belongsTo(User);
@@ -24,15 +26,16 @@ User.hasMany(Checkin);
 Checkin.belongsTo(Park);
 Park.hasMany(Checkin);
 
-User.hasMany(Connection);
-Connection.hasMany(User);
+User.belongsToMany(Follower, {as: 'followerId', through: 'connection',foreignKey: 'userId'});
+Follower.belongsToMany(User, {as: 'userId', through: 'connection',foreignKey: 'userId'});
+
 
 // Export models
 module.exports.models = {
 	User: User,
 	Park: Park,
 	Dog: Dog,
-	Connection: Connection,
-	Checkin: Checkin
+	Checkin: Checkin,
+	Connection:Connection
 };
 

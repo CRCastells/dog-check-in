@@ -1,5 +1,5 @@
-module.exports = function(sequalize, Sequelize) {
-	var model = sequalize.define("user", {
+module.exports = function(sequelize, Sequelize) {
+	var model = sequelize.define("user", {
 		firebase_id: Sequelize.INTEGER,
 		name: Sequelize.STRING,
 		email: Sequelize.STRING,
