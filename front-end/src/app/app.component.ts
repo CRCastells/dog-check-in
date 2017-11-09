@@ -7,8 +7,7 @@ import { Http } from '@angular/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-
+  
   constructor(private http :Http){}
 
 
