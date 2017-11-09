@@ -4,6 +4,34 @@
 	color: black;
 }
 
+.header-imgs {
+
+	display: inline;
+	flex-wrap: wrap;
+}
+
+#head-img-1 {
+	height: 200px;
+	width: 500px;
+	border-radius: 5px;
+	flex-grow: 1;
+	border: 2px solid black;
+}
+
+#head-img-2 {
+	height: 200px;
+	width: 400px;
+	border-radius: 5px;
+	border: 2px solid black;
+}
+
+#head-img-3 {
+	height: 200px;
+	width: 420px;
+	border-radius: 5px;
+	border: 2px solid black;
+}
+
 h3 {
 	font-family: 'Sigmar One';
 	float: left;
@@ -16,7 +44,7 @@ h3 {
 
 #search {
 	font-family: 'Sigmar One';
-	border: 2px solid black;
+	border: 1px solid black;
 	border-radius: 5px;
 	height: 35px;
 	width: 400px;
@@ -24,6 +52,7 @@ h3 {
 
 #button {
 	font-family: 'Sigmar One';
+
 }
 
 .routerLinks {
@@ -31,4 +60,5 @@ h3 {
 	font-family: 'Sigmar One';
 	margin-left: 50px;
 	margin-right: 50px;
+	color: #428bca;
 }
