@@ -1,0 +1,21 @@
+<div class="map container">
+  
+  <div class="form-group">
+    <input placeholder="search" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+  </div>
+
+	<div *ngIf="latitude && longitude">
+		<agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+			<agm-marker *ngFor="let marker of markers let i = index"
+			  [latitude]="markers[i].lat"
+			  [longitude]="markers[i].lng"
+				[iconUrl]="'../assets/Odie_the_Dog.png'">
+			  <agm-info-window>
+			    <h3><strong>{{markers[i].name}}</strong></h3>
+			    <p>{{markers[i].address}}</p>
+			  </agm-info-window>
+			 </agm-marker>
+		</agm-map>
+	</div>
+
+</div>
