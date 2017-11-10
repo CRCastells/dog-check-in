@@ -9,15 +9,19 @@ const dogsController = require('../controllers/dogs.js');
 //============
 
 // index
-// router.get('/api/users', usersController.index);
+router.get('/api/users', usersController.index);
 
 // create
+router.get('/api/users', usersController.create);
 
 // show
+router.get('/api/users', usersController.show);
 
 // update
+router.get('/api/users', usersController.update);
 
 // destroy
+router.get('/api/users', usersController.destroy);
 
 //============
 // Dog Routes
