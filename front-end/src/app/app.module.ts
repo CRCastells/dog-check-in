@@ -17,7 +17,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 
 import { AuthService } from './services/auth.service';
-import { LogInPageComponent } from './log-in-page/log-in-page.component';
+import { AuthGuardService } from './auth-guard.service';
+
 
 
 
@@ -27,8 +28,7 @@ import { LogInPageComponent } from './log-in-page/log-in-page.component';
     AppComponent,
     MapComponent,
     HeaderComponent,
-    LoginComponent,
-    LogInPageComponent
+    LoginComponent
   ],
   imports: [
     AgmCoreModule.forRoot({
@@ -44,7 +44,10 @@ import { LogInPageComponent } from './log-in-page/log-in-page.component';
     AngularFireAuthModule,
     AppRoutingModule
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    AuthGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
