@@ -3,6 +3,8 @@ import {  } from 'googlemaps';
 import { MapsAPILoader } from '@agm/core';
 import { FormControl } from '@angular/forms';
 import { Http } from '@angular/http';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -26,41 +28,46 @@ export class MapComponent implements OnInit {
  	constructor(
  		private mapsAPILoader: MapsAPILoader,
  		private ngZone: NgZone,
-    private http :Http
+    private http: Http,
+    private authService: AuthService,
+    private router: Router
  	) {}
 
   ngOnInit() {
+    this.initMap();
+  }
 
-  	// sets initial location of map to Denver while waiting for setCurrentPosition() to run
-  	this.zoom = 10;
-  	this.latitude = 39.7392;
-  	this.longitude = -104.9903;
+  initMap() {
+    // sets initial location of map to Denver while waiting for setCurrentPosition() to run
+    this.zoom = 10;
+    this.latitude = 39.7392;
+    this.longitude = -104.9903;
 
-  	this.searchControl = new FormControl;
+    this.searchControl = new FormControl;
 
     // sets map to users location
-  	this.setCurrentPosition();
+    this.setCurrentPosition();
 
     // watches the search function to return new map set to search location
     // does not currently work with setCurrentPosition()
-  	this.mapsAPILoader.load().then(() => {
-  		let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
-  		});
-  		autocomplete.addListener('place_changed', () => {
-  			this.ngZone.run(() => {
-  				let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+    this.mapsAPILoader.load().then(() => {
+      let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
+      });
+      autocomplete.addListener('place_changed', () => {
+        this.ngZone.run(() => {
+          let place: google.maps.places.PlaceResult = autocomplete.getPlace();
 
-  				if (place.geometry === undefined || place.geometry === null) {
-  					return;
-  				}
+          if (place.geometry === undefined || place.geometry === null) {
+            return;
+          }
 
           this.zoom = 16;
-  				this.latitude = place.geometry.location.lat();
-  				this.longitude = place.geometry.location.lng();
+          this.latitude = place.geometry.location.lat();
+          this.longitude = place.geometry.location.lng();
           this.getDogParks();
-  			});
-  		});
-  	});
+        });
+      });
+    });
   }
 
   // gets users current location from the navigator
