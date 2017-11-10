@@ -23,9 +23,10 @@ const aboutRoutes: Routes = [
                 component: DogNewComponent
             },
             {
-                path: 'edit/:id',
+                path: ':id/edit',
                 component: DogEditComponent
             },
+
             {
                 path: ':id',
                 component: DogShowComponent

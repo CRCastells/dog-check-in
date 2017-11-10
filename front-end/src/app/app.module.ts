@@ -39,7 +39,8 @@ import { HttpModule } from '@angular/http';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    DogRoutingModule
+    DogRoutingModule,
+    HttpModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -57,6 +57,7 @@ export class MapComponent implements OnInit {
           this.zoom = 16;
   				this.latitude = place.geometry.location.lat();
   				this.longitude = place.geometry.location.lng();
+          this.getDogParks();
   			});
   		});
   	});
@@ -78,7 +79,7 @@ export class MapComponent implements OnInit {
   getDogParks() {
     let markers = [];
     let parks = [];
-    this.http.get('http://localhost:3000/api/grabParks').subscribe(res => {
+    this.http.get(`http://localhost:3000/api/grabParks/?latitude=${this.latitude}&longitude=${this.longitude}`).subscribe(res => {
       parks = res.json().results;
       console.log('Dropping Odies',parks)
       parks.forEach(function(data) {
