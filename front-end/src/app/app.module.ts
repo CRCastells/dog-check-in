@@ -1,13 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';	
-import { AgmCoreModule } from '@agm/core';
 import { AppRoutingModule } from './app-routing.module';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
+import { DogNewComponent } from './dog/dog-new/dog-new.component';
+import { DogEditComponent } from './dog/dog-edit/dog-edit.component';
+import { DogIndexComponent } from './dog/dog-index/dog-index.component';
+import { DogShowComponent } from './dog/dog-show/dog-show.component';
+import { DogComponent } from './dog/dog.component';
+import { DogRoutingModule } from './dog/dog-routing.module';
+import { AgmCoreModule } from '@agm/core';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MapComponent } from './map/map.component';
 import { HeaderComponent } from './header/header.component';
+import { HttpModule } from '@angular/http';
 import { LoginComponent } from './login/login.component';
 
 import { environment } from '../environments/environment';
@@ -26,6 +34,11 @@ import { AuthGuardService } from './auth-guard.service';
 @NgModule({
   declarations: [
     AppComponent,
+    DogNewComponent,
+    DogEditComponent,
+    DogIndexComponent,
+    DogShowComponent,
+    DogComponent,
     MapComponent,
     HeaderComponent,
     LoginComponent
@@ -36,9 +49,12 @@ import { AuthGuardService } from './auth-guard.service';
       libraries: ['places']
     }),
     BrowserModule,
+    HttpModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule,
+    AppRoutingModule,
+    DogRoutingModule,
+ 
     AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
     AngularFireDatabaseModule,
     AngularFireAuthModule,

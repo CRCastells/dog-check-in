@@ -1,0 +1,15 @@
+<form (ngSubmit)='updateDog(updatedDog)'>
+	<label for="name">Name: </label>
+	<input name="name" [(ngModel)]='updatedDog.name'>
+	<label for="breed">Breed: </label>
+	<input name="breed" [(ngModel)]='updatedDog.breed'>
+	<label for="fixed">Fixed: </label>
+	<input type='checkbox' name="fixed" [(ngModel)]='updatedDog.fixed'>
+	<label for="description">Description: </label>
+	<input name="description" [(ngModel)]='updatedDog.description'>
+	<label for="age">Age: </label>
+	<input type='number' name="age" [(ngModel)]='updatedDog.age'>
+	<label for="picture">Picture: </label>
+	<input type='file' name="picture" [(ngModel)]='updatedDog.picture'>
+	<input type="submit" value='Update'>
+</form>
