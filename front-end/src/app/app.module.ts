@@ -7,13 +7,23 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
 import { HeaderComponent } from './header/header.component';
+import { LoginComponent } from './login/login.component';
+
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoginComponent
   ],
   imports: [
     AgmCoreModule.forRoot({
@@ -23,7 +33,10 @@ import { HeaderComponent } from './header/header.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
