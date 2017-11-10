@@ -1,32 +1,38 @@
 
 <header>
-	<div class="row">
-		<div id="img-left" class="col-md">
+	<div id="img-container" class="row no-gutter">
+		<div id="img-left" class="col-md justify-column-center">
 			<img class="top" id="head-img-1" src="http://pawhills.com/wordpress/wp-content/uploads/2015/05/dogsuitcase.jpg">
 			<img class="bottom" id="head-img-4" src="https://www.thatmutt.com/web/wp-content/uploads/2017/01/dog-socialization-1.jpg">
 		</div>
-		<div id="img-middle" class="col-md">
+		<div id="img-middle" class="col-md justify-column-center">
 			<img class="top" id="head-img-2" src="https://animalwellnessmagazine.com/wp-content/uploads/Three-puppies-red-collars-in-grass_dreamstime_xs_3061052.jpg">
 			<img class="bottom" id="head-img-3" src="http://carolinabiscuit.com/wp-content/uploads/2014/12/dogs-play-ball.jpg">
 		</div>
-		<div id="img-right" class="col-md">
+		<div id="img-right" class="col-md justify-column-center">
 			<img class="top" id="head-img-5" src="https://greaterthanthedog.files.wordpress.com/2017/07/depositphotos_49380373_l-2015.jpg?w=635&h=423">
 			<img class="bottom" id="head-img-6" src="https://www.aspcapetinsurance.com/media/2466/how-to-socialize-your-dog.jpg">
+		</div>
+		<div id="img-far" class="col-md justify-column-center">
+			<img class="top" id="head-img-7" src="https://flexpet.com/wp-content/uploads/2014/12/socialize_your_adult_dog-597750-edited.jpg">
+			<img class="bottom" id="head-img-8" src="http://www.leapsnhounds.com/wp-content/uploads/2016/06/border-collie-672696_1920.jpg">
 		</div>	
 	</div>	
 
-	<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-		<h3>Welcome, Username</h3>
-		<div class="search-bar">
-			<input id="search" type="search" placeholder="search users">
-			<input id="button" class="btn btn-primary" type="submit" value="search">
-		</div>	
-		<div class="routerLinks">
-			<a class="nav" >Profile</a>
-			<a class="nav" >Followers</a>
-			<a class="nav">Logout</a>
-		</div>
-	</nav>	
+	<div id="nav-bar" class="row">
+			<div class="col-md justify-column-center">	
+				<h3>Welcome, Username</h3>
+			</div>	
+			<div id="search-bar" class="col-md justify-column-center">
+				<input id="search" type="search" placeholder="search users">
+				<input id="button" class="btn" type="submit" value="">
+			</div>	
+			<div class="col-mdm justify-column-center" id="routerLinks">
+				<a id="link1" class="nav" routerLink="#">Profile</a>
+				<a id="link2" class="nav" routerLink="#">Followers</a>
+				<a id="link3" class="nav" routerLink="" (click)='logout()'>Logout</a>
+			</div>
+	</div>
 </header>	
 
 

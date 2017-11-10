@@ -46,6 +46,6 @@ signInWithGoogle() {
 
   logout() {
     this._firebaseAuth.auth.signOut()
-    .then((res) => this.router.navigate(['/']));
+    .then((res) => this.router.navigate(['/login']));
   }
 }
