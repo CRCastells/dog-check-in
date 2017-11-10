@@ -1,7 +1,7 @@
 const db = require('../models');
 const User = db.models.User;
 const Dog = db.models.Dog;
-const Connection = db.models.Connection;
+
 
 function index(req, res) {
 	User.findAll().then(function(users) {
