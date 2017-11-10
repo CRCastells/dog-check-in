@@ -11,6 +11,11 @@ import { DogEditComponent } from './dog/dog-edit/dog-edit.component';
 import { DogIndexComponent } from './dog/dog-index/dog-index.component';
 import { DogShowComponent } from './dog/dog-show/dog-show.component';
 import { DogComponent } from './dog/dog.component';
+
+import { AgmCoreModule } from '@agm/core';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MapComponent } from './map/map.component';
 import { HeaderComponent } from './header/header.component';
 
 
@@ -23,12 +28,18 @@ import { HeaderComponent } from './header/header.component';
     DogShowComponent,
     DogComponent,
     DogRoutingModule,
+    MapComponent,
     HeaderComponent
   ],
   imports: [
+    AgmCoreModule.forRoot({
+    	apiKey: 'AIzaSyAcPOBYzMe3J_AkZrkC00BnTVdlc1ePv3E',
+      libraries: ['places']
+    }),
     BrowserModule,
     HttpModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

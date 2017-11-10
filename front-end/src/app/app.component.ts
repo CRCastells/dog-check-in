@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +6,17 @@ import { Http } from '@angular/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+<<<<<<< HEAD
   
   constructor(private http :Http){}
+=======
+  title = 'app';
+
+  constructor(){}
+>>>>>>> fcbf75551a3a0c788f2100cc089b1aee8b336469
 
 
   ngOnInit() {
-  	this.http.get('http://localhost:3000/api/grabParks').subscribe(res => {
-  		console.log(res.json());
-  	})
   }
 
 
