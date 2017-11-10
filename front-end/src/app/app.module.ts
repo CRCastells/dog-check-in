@@ -16,6 +16,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MapComponent } from './map/map.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpModule } from '@angular/http';
+import { LoginComponent } from './login/login.component';
+
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
+
+import { AuthService } from './services/auth.service';
+import { AuthGuardService } from './auth-guard.service';
+
+
+
 
 
 @NgModule({
@@ -27,7 +40,8 @@ import { HttpModule } from '@angular/http';
     DogShowComponent,
     DogComponent,
     MapComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoginComponent
   ],
   imports: [
     AgmCoreModule.forRoot({
@@ -40,9 +54,16 @@ import { HttpModule } from '@angular/http';
     ReactiveFormsModule,
     AppRoutingModule,
     DogRoutingModule,
-    HttpModule,
+ 
+    AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AuthGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
