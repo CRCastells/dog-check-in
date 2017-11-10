@@ -11,6 +11,7 @@ import { DogEditComponent } from './dog/dog-edit/dog-edit.component';
 import { DogIndexComponent } from './dog/dog-index/dog-index.component';
 import { DogShowComponent } from './dog/dog-show/dog-show.component';
 import { DogComponent } from './dog/dog.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { DogComponent } from './dog/dog.component';
     DogIndexComponent,
     DogShowComponent,
     DogComponent,
-    DogRoutingModule
+    DogRoutingModule,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
