@@ -1,6 +1,3 @@
-.flexbox {
-	display: inline;
-}
 
 #img-container {
 	height: 200px;
@@ -34,15 +31,7 @@
 	#head-img-1, #head-img-4 {
 		display: none;
 	}
-	#alt-header {
-		display: block;
-	}
-
 }
-
-
-
-
 
 @keyframes left-image3FadeInOut {
 0% {
@@ -134,14 +123,6 @@
 	animation-iteration-count: infinite;
 	animation-duration: 8s;
 	animation-direction: alternate;
-}
-
-#alt-header {
-	postition: absolute;
-	font-family: 'Sigmar One';
-	display: none;
-	
-	
 }
 
 .row.no-gutter {
