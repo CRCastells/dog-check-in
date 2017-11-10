@@ -31,15 +31,18 @@ export class MapComponent implements OnInit {
 
   ngOnInit() {
 
-  	//
+  	// sets initial location of map to Denver while waiting for setCurrentPosition() to run
   	this.zoom = 10;
   	this.latitude = 39.7392;
   	this.longitude = -104.9903;
 
   	this.searchControl = new FormControl;
 
+    // sets map to users location
   	this.setCurrentPosition();
 
+    // watches the search function to return new map set to search location
+    // does not currently work with setCurrentPosition()
   	this.mapsAPILoader.load().then(() => {
   		let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
   		});
@@ -59,6 +62,7 @@ export class MapComponent implements OnInit {
   	});
   }
 
+  // gets users current location from the navigator
   setCurrentPosition() {
   	if('geolocation' in navigator) {
   		navigator.geolocation.getCurrentPosition((position) => {
@@ -66,32 +70,33 @@ export class MapComponent implements OnInit {
   			this.longitude = position.coords.longitude;
   			this.zoom = 14;
         this.getDogParks();
-        this.getMarkers();
   		})
   	}
   }
 
+  // makes a an HTTP request to local API and places markers based on response
   getDogParks() {
     let markers = [];
     let parks = [];
     this.http.get('http://localhost:3000/api/grabParks').subscribe(res => {
       parks = res.json().results;
-      console.log(parks)
+      console.log('Dropping Odies',parks)
       parks.forEach(function(data) {
         let lat = data.geometry.location.lat;
         let lng = data.geometry.location.lng;
         let name = data.name;
         let address = data.formatted_address;
-        markers.push({ "lat": lat, "lng": lng, "name": name, "address": address});
+        markers.push({
+         "lat": lat,
+         "lng": lng,
+         "name": name,
+         "address": address
+       });
         return markers;
       })
       return markers;
     })
     this.markers = markers;
-  }
-
-  getMarkers() {
-    console.log(this.markers)
   }
 
 }
