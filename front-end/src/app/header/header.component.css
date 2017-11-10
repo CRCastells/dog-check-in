@@ -2,15 +2,9 @@
 #img-container {
 	height: 200px;
 	width: 100%;
-	background: #D3D3D3;
-	margin-right: 0;
+	background: white;
+	margin-right: 5px;
 	border-radius: 10px;
-}
-
-@media only screen and (max-width: 1200) {
-	#img-container {
-		flex-wrap: wrap;
-	}
 }
 
 @media only screen and (max-width: 775px) {
@@ -28,6 +22,15 @@
 
 	#head-img-1, #head-img-4 {
 		display: none;
+	}
+	.nav {
+		display: inline;
+		margin: 20px;
+		margin-bottom: 25px;
+		padding: 5px;
+	}
+	#search-bar {
+		margin-bottom: 20px;
 	}
 }
 
@@ -188,6 +191,7 @@
 	margin-top: 5px;
 	border-radius: 5px;
 	flex-grow: 2;
+	margin-right: 10px;
 }
 
 #head-img-8 {
@@ -196,15 +200,26 @@
 	margin-top: 5px;
 	border-radius: 5px;
 	flex-grow: 2;
+	margin-right: 10px;
+}
+
+#nav-bar {
+	background: #C0C0C0;
+	margin-left: 5px;
+	margin-right: 0;
+	border-radius: 10px;
 }
 
 h3 {
 	font-family: 'Sigmar One';
-	float: left;
+	margin-top: 30px;
+	width: 100%;
+	padding: 10px;
+	color: black;
 }
 
-.search-bar {
-	margin-left: 100px;
+#search-bar {
+	margin-top: 40px;
 	margin-right: 100px;
 }
 
@@ -213,17 +228,22 @@ h3 {
 	border: 1px solid black;
 	border-radius: 5px;
 	height: 35px;
-	width: 400px;
+	width: 60%;
 }
 
 #button {
 	font-family: 'Sigmar One';
 }
 
-.routerLinks {
-	float: right;
+#routerLinks {
+	margin-top: 15px;
+	margin-right: 75px;
+	\margin-bottom: 10px;
+	font-size: 18px;
 	font-family: 'Sigmar One';
-	margin-left: 50px;
-	margin-right: 50px;
-	color: #428bca;
+	color: black;
+}
+
+#link1:hover, #link2:hover, #link3:hover {
+	color: white;
 }
