@@ -17,7 +17,7 @@ export class MapComponent implements OnInit {
 	longitude: number;
 	searchControl: FormControl;
 	zoom: number;
-  markers: { lat: number, lng: number }[] = [];
+  markers: { lat: number, lng: number, name: string, address: string }[] = [];
 
 
  @ViewChild("search")
@@ -76,10 +76,13 @@ export class MapComponent implements OnInit {
     let parks = [];
     this.http.get('http://localhost:3000/api/grabParks').subscribe(res => {
       parks = res.json().results;
+      console.log(parks)
       parks.forEach(function(data) {
         let lat = data.geometry.location.lat;
         let lng = data.geometry.location.lng;
-        markers.push({ "lat": lat, "lng": lng });
+        let name = data.name;
+        let address = data.formatted_address;
+        markers.push({ "lat": lat, "lng": lng, "name": name, "address": address});
         return markers;
       })
       return markers;

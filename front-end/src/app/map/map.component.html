@@ -11,10 +11,10 @@
 			<agm-marker *ngFor="let marker of markers let i = index"
 			  [latitude]="markers[i].lat"
 			  [longitude]="markers[i].lng"
-				[iconUrl]="">
+				[iconUrl]="'../assets/Odie_the_Dog.png'">
 			  <agm-info-window>
-			    <h3><strong>Location Details</strong></h3>
-			    <p>Lets Go To The Park</p>
+			    <h3><strong>{{markers[i].name}}</strong></h3>
+			    <p>{{markers[i].address}}</p>
 			  </agm-info-window>
 			 </agm-marker>
 		</agm-map>
