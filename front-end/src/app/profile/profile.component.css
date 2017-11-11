@@ -10,16 +10,22 @@
 	margin-left: 20px;
 }
 
+#new-dog-btn {
+	font-family: 'Sigmar One';
+	color: #536878;
+	margin: 0 0 0 37%;
+}
+
 #pics {
 	width: 100%;
 	height: 800px;
 	border-radius: 5px;
 	background: #536878;
-	background: -webkit-linear-gradient(left top, #C0C0C0, #536878 30%, #C0C0C0);
+	background: -webkit-linear-gradient(left top, white, #536878 30%, white);
 }
 
 #fav-parks {
-		width: 100%;
+	width: 100%;
 	height: 800px;
 	border-radius: 5px;
 	margin-right: 15px;
@@ -27,13 +33,18 @@
 	background: -webkit-linear-gradient(left top, #536878, #C0C0C0 30%, #536878);
 }
 
+#user-h3, #pic-h3, #parks-h3 {
+	text-align: center;
+}
+
 #dog1 {
 	width: 100%;
 	height: 200px;
+	margin: 15px 15px 15px 50px;
 	background: -webkit-linear-gradient(left top, white, #C0C0C0);
 	border-radius: 5px;
-	margin: 15px;
 	font-family: 'Sigmar One';
+	overflow: hidden;
 }
 
 #dog2 {
@@ -43,15 +54,17 @@
 	border-radius: 5px;
 	margin: 15px;
 	font-family: 'Sigmar One';
+	overflow: hidden;
 }
 
 #dog3 {
 	width: 100%;
 	height: 200px;
+	margin: 15px 15px 15px 50px;
 	background: -webkit-linear-gradient(left top, white, #C0C0C0);
 	border-radius: 5px;
-	margin: 15px;
 	font-family: 'Sigmar One';
+	overflow: hidden;
 }
 
 #park1 {
@@ -59,7 +72,7 @@
 	height: 200px;
 	background: -webkit-linear-gradient(left top, white, #C0C0C0);
 	border-radius: 5px;
-	margin: 15px;
+	margin: 15px 15px 15px 50px;
 	font-family: 'Sigmar One';
 }
 
