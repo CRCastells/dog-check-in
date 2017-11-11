@@ -71,3 +71,24 @@
 	margin: 15px;
 	font-family: 'Sigmar One';
 }
+
+#dog-pic-1 {
+	width: 100%;
+	height: 200px;
+	margin: 15px;
+	border-radius: 50px;
+}
+
+#dog-pic-2 {
+	width: 100%;
+	height: 200px;
+	margin: 15px;
+	border-radius: 50px;
+}
+
+#dog-pic-3 {
+	width: 100%;
+	height: 200px;
+	margin: 15px;
+	border-radius: 50px;
+}
