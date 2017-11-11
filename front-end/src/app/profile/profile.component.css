@@ -14,7 +14,7 @@
 	font-family: 'Sigmar One';
 	color: #536878;
 	border: 1px solid #536878;
-	margin: 0 0 0 37%;
+	margin: 25px 0 0 35%;
 }
 
 #pics {
@@ -25,6 +25,13 @@
 	background: -webkit-linear-gradient(left top, white, #536878 30%, white);
 }
 
+#new-pic-btn {
+	font-family: 'Sigmar One';
+	color: #536878;
+	border: 1px solid #536878;
+	margin: 25px 0 0 35%;
+} 
+
 #fav-parks {
 	width: 100%;
 	height: 800px;
@@ -34,8 +41,16 @@
 	background: -webkit-linear-gradient(left top, #536878, #C0C0C0 30%, #536878);
 }
 
+#new-park-btn {
+	font-family: 'Sigmar One';
+	color: #536878;
+	border: 1px solid #536878;
+	margin: 25px 0 0 35%;
+}
+
 #user-h3, #pic-h3, #parks-h3 {
 	text-align: center;
+	text-decoration: underline;
 }
 
 #dog1 {
