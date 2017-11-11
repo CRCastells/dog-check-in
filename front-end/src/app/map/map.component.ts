@@ -15,11 +15,12 @@ import { Router } from '@angular/router';
 })
 export class MapComponent implements OnInit {
 
+  user: object = window.localStorage;
 	latitude: number;
 	longitude: number;
 	searchControl: FormControl;
 	zoom: number;
-  markers: { lat: number, lng: number, name: string, address: string }[] = [];
+  markers: { lat: number, lng: number, name: string, address: string, rating: number}[] = [];
 
 
  @ViewChild("search")
@@ -94,17 +95,33 @@ export class MapComponent implements OnInit {
         let lng = data.geometry.location.lng;
         let name = data.name;
         let address = data.formatted_address;
+        let rating = data.rating;
+        console.log(data);
         markers.push({
          "lat": lat,
          "lng": lng,
          "name": name,
-         "address": address
+         "address": address,
+         "rating": rating
        });
         return markers;
       })
       return markers;
     })
     this.markers = markers;
+  }
+
+  checkIn(marker){
+    let index = this.markers.indexOf(marker);
+    console.log("Checking In!",this.markers[index], this.user);
+  }
+
+  getDirections(){
+    console.log("Opening Google Maps");
+  }
+
+  favoritePark(){
+    console.log("Adding to Favorite Parks")
   }
 
 }

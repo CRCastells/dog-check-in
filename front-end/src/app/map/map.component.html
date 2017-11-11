@@ -6,13 +6,17 @@
 
 	<div *ngIf="latitude && longitude">
 		<agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
-			<agm-marker *ngFor="let marker of markers let i = index"
-			  [latitude]="markers[i].lat"
-			  [longitude]="markers[i].lng"
-				[iconUrl]="'../assets/Odie_the_Dog.png'">
+			<agm-marker *ngFor="let marker of markers"
+			  [latitude]="marker.lat"
+			  [longitude]="marker.lng"
+				[iconUrl]="'../assets/dogPin.png'">
 			  <agm-info-window>
-			    <h3><strong>{{markers[i].name}}</strong></h3>
-			    <p>{{markers[i].address}}</p>
+			    <h3><strong>{{marker.name}}</strong></h3>
+			    <p>{{marker.address}}</p>
+			    <p>Rating: {{marker.rating}}</p>
+			    <button (click)="checkIn(marker)" class="btn btn-success">Check In!</button>
+			    <button (click)="getDirections()" class="btn btn-primary">Navigate Here</button>
+			    <button (click)="favoritePark()" class="btn btn-warning">Favorite This Park</button>
 			  </agm-info-window>
 			 </agm-marker>
 		</agm-map>
