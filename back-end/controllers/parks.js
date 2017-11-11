@@ -1,5 +1,6 @@
 const db = require('../models');
 const Park = db.models.Park;
+const Checkin = db.models.Checkin;
 
 function index(req, res) {
 	Park.findAll().then(function(parks) {
@@ -8,7 +9,7 @@ function index(req, res) {
 }
 
 function show(req, res) {
-	Park.findById(req.params.id)
+	Park.findById(req.params.id, {include: Checkin})
 	.then(function(park){
 		if(!park) res.send("park not found");
 		else res.json(park);

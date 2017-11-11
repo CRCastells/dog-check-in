@@ -18,10 +18,41 @@ var userCreate = function() {
 		name: 'Jeff Engleberg',
 		email: 'jeff.engleberg@gmail.com',
 		image: ""
+	}).then(function(user) {
+		connectionCreate(user.id);
+		checkinCreate(user.id);
+	});
+};
+
+var parkCreate = function() {
+	return DB.Park.create({
+		name: "Lowry Dog Park",
+		address: "Yosemite Way & E 4th Pl, Denver, CO 80230, United States",
+		lat: 39.7191456,
+		lng: -104.8810672,
+		image: "https://maps.google.com/maps/contrib/110441640603734149754/photos"
+	}).then(function(park) {
+		checkinCreate(park.id);
+	});
+};
+
+var connectionCreate = function(userId) {
+	return DB.Connection.create({
+		userId: userId,
+		followerId: userId
+	});
+};
+
+var checkinCreate = function(userId, parkId) {
+	return DB.Checkin.create({
+		isActive: 'True',
+		userId: userId,
+		parkId: parkId
 	});
 };
 
 userCreate()
+.then(parkCreate)
 .then(dogCreate)
 .then(function() {
 	process.exit();
