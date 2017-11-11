@@ -4,6 +4,8 @@ const express = require('express'),
 
 require('dotenv').config();
 
+const appRouter = require('./config/routes.js');
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -31,6 +33,8 @@ app.get('/api/grabParks', (req, res) => {
 app.get('/*', (req, res) => {
   res.send('hello!');
 });
+
+
 
 
 

@@ -3,8 +3,8 @@ const router 				= express.Router();
 const usersController 		= require('../controllers/users.js');
 const dogsController 		= require('../controllers/dogs.js');
 const parksController 		= require('../controllers/parks.js');
-const connectionsController = require('../controllers.connections.js');
-const checkinsController 	= require('../controllers.checkins.js');
+// const connectionsController = require('../controllers.connections.js');
+// const checkinsController 	= require('../controllers.checkins.js');
 
 //============
 // User Routes
@@ -67,38 +67,38 @@ router.get('api/parks/:id', parksController.destroy);
 // Connections Routes
 //===================
 
-// index
-router.get('/api/connections/', connectionsController.index);
+// // index
+// router.get('/api/connections/', connectionsController.index);
 
-// create
-router.get('/api/connections/', connectionsController.create);
+// // create
+// router.get('/api/connections/', connectionsController.create);
 
-// show
-router.get('/api/connections/:id', connectionsController.show);
+// // show
+// router.get('/api/connections/:id', connectionsController.show);
 
-// update
-router.get('api/connections/:id', connectionsController.update);
+// // update
+// router.get('api/connections/:id', connectionsController.update);
 
-// destroy
-router.get('api/connections/:id', connectionsController.destroy);
+// // destroy
+// router.get('api/connections/:id', connectionsController.destroy);
 
-//===============
-// Checkin Routes
-//===============
+// //===============
+// // Checkin Routes
+// //===============
 
-// index
-router.get('/api/checkins/', checkinsController.index);
+// // index
+// router.get('/api/checkins/', checkinsController.index);
 
-// create
-router.get('/api/checkins/', checkinsController.create);
+// // create
+// router.get('/api/checkins/', checkinsController.create);
 
-// show
-router.get('/api/checkins/:id', checkinsController.show);
+// // show
+// router.get('/api/checkins/:id', checkinsController.show);
 
-// update
-router.get('api/checkins/:id', checkinsController.update);
+// // update
+// router.get('api/checkins/:id', checkinsController.update);
 
-// destroy
-router.get('api/checkins/:id', checkinsController.destroy);
+// // destroy
+// router.get('api/checkins/:id', checkinsController.destroy);
 
-module.exports = router;
+// module.exports = router;
