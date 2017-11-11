@@ -5,6 +5,7 @@ const express = require('express'),
 require('dotenv').config();
 
 const appRouter = require('./config/routes.js');
+app.use(appRouter);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -34,6 +35,8 @@ app.get('/*', (req, res) => {
   res.send('hello!');
 });
 
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
 
 
 

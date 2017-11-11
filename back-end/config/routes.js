@@ -17,13 +17,13 @@ router.get('/api/users', usersController.index);
 router.get('/api/users', usersController.create);
 
 // show
-router.get('/api/users:id', usersController.show);
+router.get('/api/users/:id', usersController.show);
 
 // update
-router.get('/api/users:id', usersController.update);
+router.get('/api/users/:id', usersController.update);
 
 // destroy
-router.get('/api/users:id', usersController.destroy);
+router.get('/api/users/:id', usersController.destroy);
 
 //============
 // Dog Routes
@@ -101,4 +101,4 @@ router.get('api/parks/:id', parksController.destroy);
 // // destroy
 // router.get('api/checkins/:id', checkinsController.destroy);
 
-// module.exports = router;
+module.exports = router;
