@@ -2,8 +2,7 @@ import { Injectable, isDevMode} from '@angular/core';
 import { Http } from '@angular/http';
 
 @Injectable()
-export class ApiServiceService {
-
+export class ApiService {
 
 	baseUrl: string;
 
