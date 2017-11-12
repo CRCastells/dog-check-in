@@ -1,8 +1,8 @@
-const express 				= require('express');
-const router 				= express.Router();
-const usersController 		= require('../controllers/users.js');
-const dogsController 		= require('../controllers/dogs.js');
-const parksController 		= require('../controllers/parks.js');
+const express = require('express');
+const router = express.Router();
+const usersController = require('../controllers/users.js');
+const dogsController = require('../controllers/dogs.js');
+const parksController = require('../controllers/parks.js');
 // const connectionsController = require('../controllers.connections.js');
 // const checkinsController 	= require('../controllers.checkins.js');
 
@@ -106,9 +106,7 @@ router.delete('api/parks/:id', parksController.destroy);
 // // destroy
 // router.delete('api/checkins/:id', checkinsController.destroy);
 
-router.get('/*', (req, res)=> {
-	res.sendFile(__dirname + '/dist/index.html');
-});
+
 
 
 module.exports = router;
