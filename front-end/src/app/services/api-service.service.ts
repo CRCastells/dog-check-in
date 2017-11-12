@@ -1,12 +1,18 @@
-import { Injectable } from '@angular/core';
+import { Injectable, isDevMode} from '@angular/core';
 import { Http } from '@angular/http';
 
 @Injectable()
 export class ApiService {
 
-	baseUrl = 'http://localhost:3000/api';
+	baseUrl: string;
 
-  constructor(private http: Http) { }
+  constructor(private http: Http) { 
+    if(isDevMode()) {
+      this.baseUrl = 'http://localhost:3000/api';
+    } else {
+      this.baseUrl = '';
+    }
+  }
 
   ///USERS
   getOneUser(userId){
