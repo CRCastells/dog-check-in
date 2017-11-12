@@ -13,7 +13,7 @@ import { ApiService } from '../services/api-service.service';
 export class LoginComponent implements OnInit {
 
 	user = null;
-	userInfo: any = JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]]);
+	userInfo: any;
 
   constructor(private authService: AuthService, private router: Router, private http: Http, private apiService: ApiService) { 
 
@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
  signInWithGoogle() {
  	this.authService.signInWithGoogle()
  	.then((res) => {
+ 		this.userInfo = JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]])
  		let newUser = res.additionalUserInfo;
  		let firebaseId = this.userInfo.uid;
  		console.log(newUser);
