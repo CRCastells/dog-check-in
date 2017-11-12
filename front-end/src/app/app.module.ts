@@ -28,6 +28,7 @@ import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './auth-guard.service';
 import { ProfileComponent } from './profile/profile.component';
 import { FooterComponent } from './footer/footer.component';
+import { FollowersComponent } from './followers/followers.component';
 
 
 
@@ -45,7 +46,8 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     LoginComponent,
     ProfileComponent,
-    FooterComponent
+    FooterComponent,
+    FollowersComponent
   ],
   imports: [
     AgmCoreModule.forRoot({
