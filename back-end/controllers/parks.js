@@ -2,6 +2,7 @@ const db = require('../models');
 const Park = db.models.Park;
 const Checkin = db.models.Checkin;
 
+
 function index(req, res) {
 	Park.findAll().then(function(parks) {
 		res.json(parks);

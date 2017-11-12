@@ -49,7 +49,7 @@ router.get('/api/dogs/:id', dogsController.destroy);
 //============
 
 // index
-router.get('/api/parks/', parksController.index);
+router.get('/api/grabParks/', parksController.index);
 
 // create
 router.get('/api/parks/', parksController.create);
