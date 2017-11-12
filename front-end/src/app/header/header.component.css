@@ -210,7 +210,7 @@ body {
 	background: -webkit-linear-gradient(left top, #536878, white 30%, #536878);
 	margin-left: 5px;
 	margin-right: 0;
-	border-radius: 10px;
+	border-radius: 5px;
 }
 
 h3 {
@@ -241,8 +241,12 @@ h3 {
 	margin-top: -2px;
 	width: 95px;
 	height: 38px;
-	box-shadow: 2px 2px 2px black;
+	box-shadow: 1px 1px 1px black;
 	
+}
+
+#button:hover {
+	border: 1px solid white;
 }
 
 #routerLinks {

@@ -5,7 +5,7 @@
 #user-container {
 	width: 100%;
 	height: 800px;
-	border-radius: 5px;
+	border-radius: 2px;
 	background: -webkit-linear-gradient(left top, #536878, #C0C0C0 30%, #536878);
 	margin-left: 20px;
 }
@@ -15,12 +15,17 @@
 	color: #536878;
 	border: 1px solid #536878;
 	margin: 25px 0 0 35%;
+	box-shadow: 1px 1px 1px black;
+}
+
+#new-dog-btn:hover {
+	border: 1px solid white;
 }
 
 #pics {
 	width: 100%;
 	height: 800px;
-	border-radius: 5px;
+	border-radius: 2px;
 	background: #536878;
 	background: -webkit-linear-gradient(left top, white, #536878 30%, white);
 }
@@ -30,12 +35,17 @@
 	color: #536878;
 	border: 1px solid #536878;
 	margin: 25px 0 0 35%;
+	box-shadow: 1px 1px 1px black;
 } 
+
+#new-pic-btn:hover {
+	border: 1px solid white;
+}
 
 #fav-parks {
 	width: 100%;
 	height: 800px;
-	border-radius: 5px;
+	border-radius: 2px;
 	margin-right: 15px;
 	background: #536878;
 	background: -webkit-linear-gradient(left top, #536878, #C0C0C0 30%, #536878);
@@ -46,6 +56,11 @@
 	color: #536878;
 	border: 1px solid #536878;
 	margin: 25px 0 0 35%;
+	box-shadow: 1px 1px 1px black;
+}
+
+#new-park-btn:hover {
+	border: 1px solid white;
 }
 
 #user-h3, #pic-h3, #parks-h3 {
@@ -90,6 +105,7 @@
 	border-radius: 5px;
 	margin: 15px 15px 15px 50px;
 	font-family: 'Sigmar One';
+	overflow: hidden;
 }
 
 #park2 {
@@ -99,6 +115,7 @@
 	border-radius: 5px;
 	margin: 15px;
 	font-family: 'Sigmar One';
+	overflow: hidden;
 }
 
 #dog-pic-1 {

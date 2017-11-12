@@ -2,3 +2,11 @@ agm-map {
   height: 100vh;
   width: 100vw;
 }
+
+body {
+	background: -webkit-linear-gradient(left, #C0C0C0, black 50%, #C0C0C0);
+}
+
+.form-group {
+	margin: 15px;
+}
