@@ -15,9 +15,10 @@ let port = process.env.PORT || 3000;
 
 let server = https.createServer(options,app);
 
+const path = require('path');
+
+
 require('dotenv').config();
-
-
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -27,7 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 //Only needed if not on Heroku/prod
 if (!process.env.DYNO) {
   app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+    res.header("Access-Control-Allow-Origin", "https://dogcheckin.herokuapp.com" || 'http://localhost:4200');
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE");
     next();
@@ -45,14 +46,11 @@ app.use(appRouter);
 //     res.send(body);
 //   });
 // });
+app.use(express.static(__dirname + '/dist'));
 
-
-app.get('/*', (req, res) => {
-  res.send('hello!');
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/dist/index.html'));
 });
-
-const bodyParser = require('body-parser');
-app.use(bodyParser.json());
 
 
 
