@@ -1,14 +1,21 @@
 const db = require('../models');
 const Park = db.models.Park;
+const Checkin = db.models.Checkin;
+let request = require('request');
+
 
 function index(req, res) {
 	Park.findAll().then(function(parks) {
-		res.json(parks);
-	});
+	let apiCall = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=dog%20parks&location=${req.query.latitude},${req.query.longitude}&radius=50&key=${process.env.API_KEY}`;
+    	request(apiCall, (err, response, body) => {
+    	console.log(err,response,body);
+    	res.send(body);
+		});
+    });
 }
 
 function show(req, res) {
-	Park.findById(req.params.id)
+	Park.findById(req.params.id, {include: Checkin})
 	.then(function(park){
 		if(!park) res.send("park not found");
 		else res.json(park);
