@@ -7,6 +7,7 @@ require('dotenv').config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use(require(__dirname+ '/config/routes'));
 //CORS setup to allow other ports from this host
 
 //Only needed if not on Heroku/prod
@@ -26,13 +27,6 @@ app.get('/api/grabParks', (req, res) => {
     res.send(body);
   });
 });
-
-
-app.get('/*', (req, res) => {
-  res.send('hello!');
-});
-
-
 
 app.listen(process.env.PORT, () => {
 	console.log('Server started on port ' + process.env.PORT);
