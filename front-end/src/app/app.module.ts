@@ -27,6 +27,7 @@ import * as firebase from 'firebase/app';
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './auth-guard.service';
 import { ProfileComponent } from './profile/profile.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -43,7 +44,8 @@ import { ProfileComponent } from './profile/profile.component';
     MapComponent,
     HeaderComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    FooterComponent
   ],
   imports: [
     AgmCoreModule.forRoot({
