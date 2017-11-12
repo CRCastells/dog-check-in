@@ -5,6 +5,7 @@ import { FormControl } from '@angular/forms';
 import { Http } from '@angular/http';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { MapService } from './map-service.service';
 
 
 @Component({
@@ -15,7 +16,7 @@ import { Router } from '@angular/router';
 })
 export class MapComponent implements OnInit {
 
-  user: object = window.localStorage;
+  user: object = JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]]);
 	latitude: number;
 	longitude: number;
 	searchControl: FormControl;
@@ -31,7 +32,8 @@ export class MapComponent implements OnInit {
  		private ngZone: NgZone,
     private http: Http,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private mapService: MapService
  	) {}
 
   ngOnInit() {
@@ -89,14 +91,13 @@ export class MapComponent implements OnInit {
     let parks = [];
     this.http.get(`http://localhost:3000/api/grabParks/?latitude=${this.latitude}&longitude=${this.longitude}`).subscribe(res => {
       parks = res.json().results;
-      console.log('Dropping Odies',parks)
       parks.forEach(function(data) {
         let lat = data.geometry.location.lat;
         let lng = data.geometry.location.lng;
         let name = data.name;
         let address = data.formatted_address;
         let rating = data.rating;
-        console.log(data);
+        // console.log(data);
         markers.push({
          "lat": lat,
          "lng": lng,
@@ -112,8 +113,7 @@ export class MapComponent implements OnInit {
   }
 
   checkIn(marker){
-    let index = this.markers.indexOf(marker);
-    console.log("Checking In!", this.markers[index], this.user);
+    this.mapService.getInfo(marker);
   }
 
   getDirections(){
@@ -121,8 +121,7 @@ export class MapComponent implements OnInit {
   }
 
   favoritePark(marker){
-    let index = this.markers.indexOf(marker);
-    console.log("Adding to Favorite Parks", this.markers[index])    
+    this.mapService.getInfo(marker);  
   }
 
 }
