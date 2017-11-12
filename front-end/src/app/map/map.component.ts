@@ -5,6 +5,7 @@ import { FormControl } from '@angular/forms';
 import { Http } from '@angular/http';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { MapService } from './map-service.service';
 
 
 @Component({
@@ -15,11 +16,12 @@ import { Router } from '@angular/router';
 })
 export class MapComponent implements OnInit {
 
+  user: object = JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]]);
 	latitude: number;
 	longitude: number;
 	searchControl: FormControl;
 	zoom: number;
-  markers: { lat: number, lng: number, name: string, address: string }[] = [];
+  markers: { lat: number, lng: number, name: string, address: string, rating: number}[] = [];
 
 
  @ViewChild("search")
@@ -30,7 +32,8 @@ export class MapComponent implements OnInit {
  		private ngZone: NgZone,
     private http: Http,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private mapService: MapService
  	) {}
 
   ngOnInit() {
@@ -88,23 +91,37 @@ export class MapComponent implements OnInit {
     let parks = [];
     this.http.get(`http://localhost:3000/api/grabParks/?latitude=${this.latitude}&longitude=${this.longitude}`).subscribe(res => {
       parks = res.json().results;
-      console.log('Dropping Odies',parks)
       parks.forEach(function(data) {
         let lat = data.geometry.location.lat;
         let lng = data.geometry.location.lng;
         let name = data.name;
         let address = data.formatted_address;
+        let rating = data.rating;
+        // console.log(data);
         markers.push({
          "lat": lat,
          "lng": lng,
          "name": name,
-         "address": address
+         "address": address,
+         "rating": rating
        });
         return markers;
       })
       return markers;
     })
     this.markers = markers;
+  }
+
+  checkIn(marker){
+    this.mapService.getInfo(marker);
+  }
+
+  getDirections(){
+    console.log("Opening Google Maps");
+  }
+
+  favoritePark(marker){
+    this.mapService.getInfo(marker);  
   }
 
 }
