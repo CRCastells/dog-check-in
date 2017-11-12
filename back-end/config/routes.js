@@ -54,7 +54,7 @@ router.delete('/api/dogs/:id', dogsController.destroy);
 //============
 
 // index
-router.get('/api/grabParks/', parksController.index);
+router.get('/api/parks/', parksController.index);
 
 // create
 router.post('/api/parks/', parksController.create);
@@ -80,7 +80,7 @@ router.delete('api/parks/:id', parksController.destroy);
 // router.get('/api/connections/', connectionsController.create);
 
 // create
-router.post('/api/connections/', connectionsController.create);
+// router.post('/api/connections/', connectionsController.create);
 
 
 // // show
@@ -94,10 +94,10 @@ router.post('/api/connections/', connectionsController.create);
 // router.get('api/connections/:id', connectionsController.destroy);
 
 // update
-router.put('api/connections/:id', connectionsController.update);
+// router.put('api/connections/:id', connectionsController.update);
 
 // destroy
-router.delete('api/connections/:id', connectionsController.destroy);
+// router.delete('api/connections/:id', connectionsController.destroy);
 
 
 // //===============
@@ -112,7 +112,7 @@ router.delete('api/connections/:id', connectionsController.destroy);
 // router.get('/api/checkins/', checkinsController.create);
 
 // create
-router.post('/api/checkins/', checkinsController.create);
+// router.post('/api/checkins/', checkinsController.create);
 
 
 // // show
@@ -126,10 +126,10 @@ router.post('/api/checkins/', checkinsController.create);
 // router.get('api/checkins/:id', checkinsController.destroy);
 
 // update
-router.put('api/checkins/:id', checkinsController.update);
+// router.put('api/checkins/:id', checkinsController.update);
 
-// destroy
-router.delete('api/checkins/:id', checkinsController.destroy);
+// // destroy
+// router.delete('api/checkins/:id', checkinsController.destroy);
 
 
 module.exports = router;

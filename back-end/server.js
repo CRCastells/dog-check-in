@@ -22,14 +22,14 @@ if (!process.env.DYNO) {
   });
 }
 
-
-app.get('/api/grabParks', (req, res) => {
-  let apiCall = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=dog%20parks&location=${req.query.latitude},${req.query.longitude}&radius=50&key=${process.env.API_KEY}`;
-  request(apiCall, (err, response, body) => {
-    console.log(err,response,body);
-    res.send(body);
-  });
-});
+// Moving to parks Controller and Routes
+// app.get('/api/grabParks', (req, res) => {
+//   let apiCall = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=dog%20parks&location=${req.query.latitude},${req.query.longitude}&radius=50&key=${process.env.API_KEY}`;
+//   request(apiCall, (err, response, body) => {
+//     console.log(err,response,body);
+//     res.send(body);
+//   });
+// });
 
 
 app.get('/*', (req, res) => {

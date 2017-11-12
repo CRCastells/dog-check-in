@@ -5,8 +5,12 @@ const Checkin = db.models.Checkin;
 
 function index(req, res) {
 	Park.findAll().then(function(parks) {
-		res.json(parks);
-	});
+	let apiCall = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=dog%20parks&location=${req.query.latitude},${req.query.longitude}&radius=50&key=${process.env.API_KEY}`;
+    	request(apiCall, (err, response, body) => {
+    	console.log(err,response,body);
+    	res.send(body);
+		});
+    });
 }
 
 function show(req, res) {

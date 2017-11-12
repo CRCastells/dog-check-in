@@ -1,21 +1,23 @@
 const DB = require("../models").models;
 
-var testUsers = [
-	{
-		firebase_id: 'DitZkRR3iqQpuXohyjl6VJPiWs92',
-		name: 'Jeff Engleberg',
-		email: 'jeff.engleberg@gmail.com',
-		image: ""
-	},
-	{
-		firebase_id: 'T2u8TPd51ge3mAq1A92DusRRina2',
-		name: 'Jared Pleva',
-		email: 'jeff.engleberg@gmail.com',
-		image: ""
-	}
+// var testUsers = [
+// 	{
+// 		firebase_id: 'DitZkRR3iqQpuXohyjl6VJPiWs92',
+// 		name: 'Jeff Engleberg',
+// 		email: 'jeff.engleberg@gmail.com',
+// 		image: "",
+// 		followerId: ""
+// 	},
+// 	{
+// 		firebase_id: 'T2u8TPd51ge3mAq1A92DusRRina2',
+// 		name: 'Jared Pleva',
+// 		email: 'jpleva91@gmail.com',
+// 		image: "",
+// 		followerId: ""
+// 	}
 
 
-];
+// ];
 
 var dogCreate = function() {
 	return DB.Dog.create({
