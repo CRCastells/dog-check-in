@@ -15,6 +15,6 @@ export class MapService {
   ) { }
 
   getInfo(marker) {
-  	console.log("Checking In!", marker, this.user);
+  	console.log("Current Location: ", marker, "Current User: ", this.user);
   }
 }
