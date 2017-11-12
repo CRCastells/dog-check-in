@@ -103,21 +103,24 @@
 
 #dog-pic-1 {
 	width: 110%;
-	height: 200px;
-	margin: 15px;
+	height: 215px;
+	margin: 15px 15px 15px 25px;
 	border-radius: 50px;
+	border: 2px solid #C0C0C0;
 }
 
 #dog-pic-2 {
 	width: 110%;
-	height: 200px;
-	margin: 15px;
+	height: 215px;
+	margin: 15px 15px 15px 35px;
 	border-radius: 50px;
+	border: 2px solid #C0C0C0;
 }
 
 #dog-pic-3 {
 	width: 110%;
-	height: 200px;
-	margin: 15px;
+	height: 215px;
+	margin: 15px 15px 15px 25px;
 	border-radius: 50px;
+	border: 2px solid #C0C0C0;
 }
