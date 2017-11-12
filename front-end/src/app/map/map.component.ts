@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, NgZone } f
 import {  } from 'googlemaps';
 import { MapsAPILoader } from '@agm/core';
 import { FormControl } from '@angular/forms';
-import { Http, Headers } from '@angular/http';
+import { Http } from '@angular/http';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { MapService } from './map-service.service';
@@ -33,8 +33,7 @@ export class MapComponent implements OnInit {
     private http: Http,
     private authService: AuthService,
     private router: Router,
-    private mapService: MapService,
-    private headers: Headers
+    private mapService: MapService
  	) {}
 
   ngOnInit() {
@@ -90,7 +89,7 @@ export class MapComponent implements OnInit {
   getDogParks() {
     let markers = [];
     let parks = [];
-    this.http.get(`http://localhost:3000/api/grabParks/?latitude=${this.latitude}&longitude=${this.longitude}`).subscribe(res => {
+    this.http.get(`https://localhost:3000/api/grabParks/?latitude=${this.latitude}&longitude=${this.longitude}`).subscribe(res => {
       parks = res.json().results;
       parks.forEach(function(data) {
         let lat = data.geometry.location.lat;

@@ -1,6 +1,19 @@
 const express = require('express'),
   app = express(),
-  request = require('request');
+  request = require('request'),
+  https = require('https'),
+  fs = require('fs');
+
+let options = {
+  key: fs.readFileSync( './localhost.key' ),
+  cert: fs.readFileSync( './localhost.cert' ),
+  requestCert: false,
+  rejectUnauthorized: false
+};
+
+let port = process.env.PORT || 3000;
+
+let server = https.createServer(options,app);
 
 require('dotenv').config();
 
@@ -44,6 +57,6 @@ app.use(bodyParser.json());
 
 
 
-app.listen(process.env.PORT, () => {
-	console.log('Server started on port ' + process.env.PORT);
-});
+server.listen( port, function () {
+    console.log( 'Express server listening on port ' + server.address().port );
+} );
