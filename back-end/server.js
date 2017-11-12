@@ -4,8 +4,7 @@ const express = require('express'),
 
 require('dotenv').config();
 
-const appRouter = require('./config/routes.js');
-app.use(appRouter);
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -21,6 +20,9 @@ if (!process.env.DYNO) {
     next();
   });
 }
+
+const appRouter = require('./config/routes.js');
+app.use(appRouter);
 
 // Moving to parks Controller and Routes
 // app.get('/api/grabParks', (req, res) => {

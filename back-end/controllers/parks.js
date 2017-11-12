@@ -1,6 +1,7 @@
 const db = require('../models');
 const Park = db.models.Park;
 const Checkin = db.models.Checkin;
+let request = require('request');
 
 
 function index(req, res) {
