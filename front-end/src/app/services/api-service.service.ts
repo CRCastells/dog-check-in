@@ -4,16 +4,11 @@ import { Http } from '@angular/http';
 @Injectable()
 export class ApiService {
 
-<<<<<<< HEAD
-	baseUrl = 'http://localhost:3000/api';
-=======
->>>>>>> a8bf767de8f5045d31c01bd8fc551083d1ad797d
-
 	baseUrl: string;
 
   constructor(private http: Http) { 
     if(isDevMode()) {
-      this.baseUrl = 'http://localhost:3000/api';
+      this.baseUrl = 'https://localhost:3000/api';
     } else {
       this.baseUrl = '';
     }
