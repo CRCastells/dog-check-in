@@ -12,11 +12,11 @@
 				[iconUrl]="'../assets/dogPin.png'">
 			  <agm-info-window>
 			    <h3><strong>{{marker.name}}</strong></h3>
-			    <p>{{marker.address}}</p>
-			    <p>Rating: {{marker.rating}}</p>
+			    <p><strong>Address: </strong>{{marker.address}}</p>
+			    <p><strong>Rating: </strong>{{marker.rating}}</p>
 			    <button (click)="checkIn(marker)" class="btn btn-success">Check In!</button>
-			    <button (click)="getDirections()" class="btn btn-primary">Navigate Here</button>
-			    <button (click)="favoritePark()" class="btn btn-warning">Favorite This Park</button>
+			    <button (click)="getDirections()" class="btn btn-primary"><a href="https://maps.google.com/?q={{marker.address}}" target="_blank">Navigate Here</a></button>
+			    <button (click)="favoritePark(marker)" class="btn btn-warning">Favorite This Park</button>
 			  </agm-info-window>
 			 </agm-marker>
 		</agm-map>

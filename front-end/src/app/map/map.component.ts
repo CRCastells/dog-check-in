@@ -113,15 +113,16 @@ export class MapComponent implements OnInit {
 
   checkIn(marker){
     let index = this.markers.indexOf(marker);
-    console.log("Checking In!",this.markers[index], this.user);
+    console.log("Checking In!", this.markers[index], this.user);
   }
 
   getDirections(){
     console.log("Opening Google Maps");
   }
 
-  favoritePark(){
-    console.log("Adding to Favorite Parks")
+  favoritePark(marker){
+    let index = this.markers.indexOf(marker);
+    console.log("Adding to Favorite Parks", this.markers[index])    
   }
 
 }

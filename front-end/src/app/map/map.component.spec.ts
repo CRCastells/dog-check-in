@@ -6,6 +6,7 @@ describe('MapComponent', () => {
   let component: MapComponent;
   let fixture: ComponentFixture<MapComponent>;
 
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ MapComponent ]
@@ -22,4 +23,12 @@ describe('MapComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should run initMap()', () => {
+    runs(this.initMap());
+  });
+
+  it('should have a user', () => {
+    expect(this.user).toBeTruthy();
+  })
 });
