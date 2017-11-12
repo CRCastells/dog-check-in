@@ -3,14 +3,6 @@ const express = require('express'),
 
 require('dotenv').config();
 
-const appRouter = require('./config/routes.js');
-app.use(appRouter);
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.use(require(__dirname+ '/config/routes'));
-//CORS setup to allow other ports from this host
 
 //Only needed if not on Heroku/prod
 if (!process.env.DYNO) {
@@ -21,6 +13,17 @@ if (!process.env.DYNO) {
     next();
   });
 }
+
+const appRouter = require('./config/routes.js');
+app.use(appRouter);
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use(require(__dirname+ '/config/routes'));
+//CORS setup to allow other ports from this host
+
+
 
 // Moving to parks Controller and Routes
 // app.get('/api/grabParks', (req, res) => {

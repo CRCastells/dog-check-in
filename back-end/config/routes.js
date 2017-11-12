@@ -74,7 +74,6 @@ router.delete('api/parks/:id', parksController.destroy);
 
 // // index
 // router.get('/api/connections/', connectionsController.index);
-<<<<<<< HEAD
 
 // // create
 // router.post('/api/connections/', connectionsController.create);
@@ -110,64 +109,6 @@ router.delete('api/parks/:id', parksController.destroy);
 router.get('/*', (req, res)=> {
 	res.sendFile(__dirname + '/dist/index.html');
 });
-=======
 
-
-// // create
-// router.get('/api/connections/', connectionsController.create);
-
-// create
-// router.post('/api/connections/', connectionsController.create);
-
-
-// // show
-// router.get('/api/connections/:id', connectionsController.show);
-
-
-// // update
-// router.get('api/connections/:id', connectionsController.update);
-
-// // destroy
-// router.get('api/connections/:id', connectionsController.destroy);
-
-// update
-// router.put('api/connections/:id', connectionsController.update);
-
-// destroy
-// router.delete('api/connections/:id', connectionsController.destroy);
-
-
-// //===============
-// // Checkin Routes
-// //===============
-
-// // index
-// router.get('/api/checkins/', checkinsController.index);
-
-
-// // create
-// router.get('/api/checkins/', checkinsController.create);
-
-// create
-// router.post('/api/checkins/', checkinsController.create);
-
-
-// // show
-// router.get('/api/checkins/:id', checkinsController.show);
-
-
-// // update
-// router.get('api/checkins/:id', checkinsController.update);
-
-// // destroy
-// router.get('api/checkins/:id', checkinsController.destroy);
-
-// update
-// router.put('api/checkins/:id', checkinsController.update);
-
-// // destroy
-// router.delete('api/checkins/:id', checkinsController.destroy);
-
->>>>>>> e13cf57b113551e9d701936676f4bb066404e734
 
 module.exports = router;
