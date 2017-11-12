@@ -1,6 +1,8 @@
 const db = require('../models');
 const User = db.models.User;
 const Dog = db.models.Dog;
+// const Connection = db.models.Connection;
+// const Checkin = db.models.Checkin;
 
 
 function index(req, res) {
@@ -10,7 +12,7 @@ function index(req, res) {
 }
 
 function show(req, res) {
-	User.findById(req.params.id, {include: Dog})
+	User.findById(req.params.id, {include: Dog})//, {include: Connection}, {include: Checkin}
 	.then(function(user){
 		if(!user) res.send("user not found");
 		else res.json(user);

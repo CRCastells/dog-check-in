@@ -1,8 +1,10 @@
 const express = require('express'),
-  app = express(),
-  request = require('request');
+  app = express();
 
 require('dotenv').config();
+
+const appRouter = require('./config/routes.js');
+app.use(appRouter);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -20,13 +22,14 @@ if (!process.env.DYNO) {
   });
 }
 
-app.get('/api/grabParks', (req, res) => {
-  let apiCall = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=dog%20parks&location=${req.query.latitude},${req.query.longitude}&radius=50&key=${process.env.API_KEY}`;
-  request(apiCall, (err, response, body) => {
-    console.log(err,response,body);
-    res.send(body);
-  });
-});
+// Moving to parks Controller and Routes
+// app.get('/api/grabParks', (req, res) => {
+//   let apiCall = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=dog%20parks&location=${req.query.latitude},${req.query.longitude}&radius=50&key=${process.env.API_KEY}`;
+//   request(apiCall, (err, response, body) => {
+//     console.log(err,response,body);
+//     res.send(body);
+//   });
+// });
 
 app.listen(process.env.PORT, () => {
 	console.log('Server started on port ' + process.env.PORT);
