@@ -14,7 +14,7 @@ const parksController 		= require('../controllers/parks.js');
 router.get('/api/users', usersController.index);
 
 // create
-router.get('/api/users', usersController.create);
+router.post('/api/users', usersController.create);
 
 // show
 router.get('/api/users/:id', usersController.show);
@@ -24,6 +24,11 @@ router.get('/api/users/:id', usersController.update);
 
 // destroy
 router.get('/api/users/:id', usersController.destroy);
+router.put('/api/users:id', usersController.update);
+
+// destroy
+router.delete('/api/users:id', usersController.destroy);
+
 
 //============
 // Dog Routes
@@ -39,10 +44,10 @@ router.post('/api/dogs', dogsController.create);
 router.get('/api/dogs/:id', dogsController.show);
 
 // update
-router.get('/api/dogs/:id', dogsController.update);
+router.put('/api/dogs/:id', dogsController.update);
 
 // destroy
-router.get('/api/dogs/:id', dogsController.destroy);
+router.delete('/api/dogs/:id', dogsController.destroy);
 
 //============
 // Park Routes
@@ -52,16 +57,16 @@ router.get('/api/dogs/:id', dogsController.destroy);
 router.get('/api/grabParks/', parksController.index);
 
 // create
-router.get('/api/parks/', parksController.create);
+router.post('/api/parks/', parksController.create);
 
 // show
 router.get('/api/parks/:id', parksController.show);
 
 // update
-router.get('api/parks/:id', parksController.update);
+router.put('api/parks/:id', parksController.update);
 
 // destroy
-router.get('api/parks/:id', parksController.destroy);
+router.delete('api/parks/:id', parksController.destroy);
 
 //===================
 // Connections Routes
@@ -70,17 +75,30 @@ router.get('api/parks/:id', parksController.destroy);
 // // index
 // router.get('/api/connections/', connectionsController.index);
 
+
 // // create
 // router.get('/api/connections/', connectionsController.create);
 
+// create
+router.post('/api/connections/', connectionsController.create);
+
+
 // // show
 // router.get('/api/connections/:id', connectionsController.show);
+
 
 // // update
 // router.get('api/connections/:id', connectionsController.update);
 
 // // destroy
 // router.get('api/connections/:id', connectionsController.destroy);
+
+// update
+router.put('api/connections/:id', connectionsController.update);
+
+// destroy
+router.delete('api/connections/:id', connectionsController.destroy);
+
 
 // //===============
 // // Checkin Routes
@@ -89,16 +107,29 @@ router.get('api/parks/:id', parksController.destroy);
 // // index
 // router.get('/api/checkins/', checkinsController.index);
 
+
 // // create
 // router.get('/api/checkins/', checkinsController.create);
 
+// create
+router.post('/api/checkins/', checkinsController.create);
+
+
 // // show
 // router.get('/api/checkins/:id', checkinsController.show);
+
 
 // // update
 // router.get('api/checkins/:id', checkinsController.update);
 
 // // destroy
 // router.get('api/checkins/:id', checkinsController.destroy);
+
+// update
+router.put('api/checkins/:id', checkinsController.update);
+
+// destroy
+router.delete('api/checkins/:id', checkinsController.destroy);
+
 
 module.exports = router;
