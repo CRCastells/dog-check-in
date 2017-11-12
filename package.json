@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "deploy": "cd front-end && ng build --aot -prod -op ../back-end/dist && cd ..",
-    "start": "cd back-end/ node server.js",
+    "start": "cd back-end/ && node server.js",
     "postinstall": "cd back-end && npm install && cd ../front-end && npm install"
   },
   "repository": {
