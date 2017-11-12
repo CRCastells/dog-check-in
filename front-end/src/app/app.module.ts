@@ -54,9 +54,7 @@ import { ApiService } from './services/api-service.service';
     HttpModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule,
-    DogRoutingModule,
- 
+    DogRoutingModule, 
     AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
     AngularFireDatabaseModule,
     AngularFireAuthModule,

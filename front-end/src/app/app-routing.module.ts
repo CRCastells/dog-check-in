@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { MapComponent } from './map/map.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuardService } from './auth-guard.service';
-
+import { DogNewComponent } from './dog/dog-new/dog-new.component';
 const routes: Routes = [
     {
         path: 'map',
@@ -15,6 +15,10 @@ const routes: Routes = [
     {
         path: 'login',
         component: LoginComponent
+    },
+    {
+      path: '',
+      component: DogNewComponent
     }
 ]
 
