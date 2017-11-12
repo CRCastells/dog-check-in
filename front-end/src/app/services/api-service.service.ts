@@ -4,7 +4,7 @@ import { Http } from '@angular/http';
 @Injectable()
 export class ApiService {
 
-	baseUrl = 'http://localhost:3000/api/';
+	baseUrl = 'http://localhost:3000/api';
 
   constructor(private http: Http) { }
 

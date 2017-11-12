@@ -13,6 +13,7 @@ import { ApiService } from '../services/api-service.service';
 export class LoginComponent implements OnInit {
 
 	user = null;
+	userInfo: any = JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]]);
 
   constructor(private authService: AuthService, private router: Router, private http: Http, private apiService: ApiService) { 
 
@@ -21,9 +22,20 @@ export class LoginComponent implements OnInit {
  signInWithGoogle() {
  	this.authService.signInWithGoogle()
  	.then((res) => {
- 		let newUser = res.additionalUserInfo.isNewUser;
- 		if(newUser) {
- 			this.apiService.createUser(res)
+ 		let newUser = res.additionalUserInfo;
+ 		let firebaseId = this.userInfo.uid;
+ 		console.log(newUser);
+ 		let userObject = {
+ 			firebase_id: firebaseId,
+ 			name: newUser.profile.name,
+ 			email: newUser.profile.email,
+ 			image: newUser.profile.picture
+ 		}
+ 		if(newUser.isNewUser) {
+ 			this.apiService.createUser(userObject)
+ 			.subscribe(res => {
+ 				console.log(res.json());
+ 			})
  		}
  		this.router.navigateByUrl('/map')
  	})
