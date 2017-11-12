@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { Http } from '@angular/http';
+import { ApiService } from '../services/api-service.service';
 
 @Component({
   selector: 'app-login',
@@ -13,14 +14,17 @@ export class LoginComponent implements OnInit {
 
 	user = null;
 
-  constructor(private authService: AuthService, private router: Router, private http: Http) { 
+  constructor(private authService: AuthService, private router: Router, private http: Http, private apiService: ApiService) { 
 
  }
 
  signInWithGoogle() {
  	this.authService.signInWithGoogle()
  	.then((res) => {
- 		console.log(res);
+ 		let newUser = res.additionalUserInfo.isNewUser;
+ 		if(newUser) {
+ 			this.apiService.createUser(res)
+ 		}
  		this.router.navigateByUrl('/map')
  	})
  	.catch((err) => console.log(err));

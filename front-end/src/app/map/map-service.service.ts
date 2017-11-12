@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
 
 @Injectable()
 export class MapService {
@@ -9,7 +10,9 @@ export class MapService {
 		zoom: number;
 	  markers: { lat: number, lng: number, name: string, address: string, rating: number}[] = [];
 
-  constructor() { }
+  constructor(
+  	private http: Http
+  ) { }
 
   getInfo(marker) {
   	console.log("Checking In!", marker, this.user);

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
 @Injectable()
-export class ApiServiceService {
+export class ApiService {
 
 	baseUrl = 'http://localhost:3000/api/';
 
