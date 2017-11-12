@@ -5,8 +5,8 @@ const express = require('express'),
   fs = require('fs');
 
 let options = {
-  key: fs.readFileSync( './dogcheckin.herokuapp.key' ),
-  cert: fs.readFileSync( './dogcheckin.herokuapp.cert' ),
+  key: fs.readFileSync( './dogcheckin.herokuapp.com.key' ),
+  cert: fs.readFileSync( './dogcheckin.herokuapp.com.cert' ),
   requestCert: false,
   rejectUnauthorized: false
 };
