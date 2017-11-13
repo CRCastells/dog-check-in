@@ -32,6 +32,7 @@ import { UserComponent } from './user/user.component';
 import { UserIndexComponent } from './user/user-index/user-index.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserShowComponent } from './user/user-show/user-show.component';
+import { UserRoutingModule } from './user/user-routing.module';
 
 
 
@@ -64,6 +65,7 @@ import { UserShowComponent } from './user/user-show/user-show.component';
     ReactiveFormsModule,
     AppRoutingModule,
     DogRoutingModule,
+    UserRoutingModule,
  
     AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
     AngularFireDatabaseModule,
