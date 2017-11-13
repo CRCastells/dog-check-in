@@ -6,7 +6,7 @@ Dog Check-In is a user-friendly social media site that connects dog owners and a
 ## Wireframes
 
 Log In:
-![alt text](./front-end/src/assets/Log-in.png "Log-In Page")
+![alt text](front-end/src/assets/Log-in.png "Log-In Page")
 
 Map-Page: 
 ![alt text](front-end/src/assets/Map-page.png "Log-In Page")
