@@ -28,6 +28,7 @@ import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './auth-guard.service';
 import { MapService } from './map/map-service.service';
 import { ApiService } from './services/api-service.service';
+import { ConnectionsComponent } from './connections/connections.component';
 
 
 
@@ -43,7 +44,8 @@ import { ApiService } from './services/api-service.service';
     DogComponent,
     MapComponent,
     HeaderComponent,
-    LoginComponent
+    LoginComponent,
+    ConnectionsComponent
   ],
   imports: [
     AgmCoreModule.forRoot({
