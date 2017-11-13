@@ -26,9 +26,13 @@ import * as firebase from 'firebase/app';
 
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './auth-guard.service';
+<<<<<<< HEAD
 import { ProfileComponent } from './profile/profile.component';
 import { FooterComponent } from './footer/footer.component';
 import { FollowersComponent } from './followers/followers.component';
+=======
+import { MapService } from './map/map-service.service';
+>>>>>>> 9605701d33db52ef301864de84f93a6da3ea3db6
 
 
 
@@ -68,7 +72,8 @@ import { FollowersComponent } from './followers/followers.component';
   ],
   providers: [
     AuthService,
-    AuthGuardService
+    AuthGuardService,
+    MapService
   ],
   bootstrap: [AppComponent]
 })

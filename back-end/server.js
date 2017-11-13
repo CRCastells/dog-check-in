@@ -4,6 +4,8 @@ const express = require('express'),
 
 require('dotenv').config();
 
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -19,18 +21,26 @@ if (!process.env.DYNO) {
   });
 }
 
-app.get('/api/grabParks', (req, res) => {
-  let apiCall = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=dog%20parks&location=${req.query.latitude},${req.query.longitude}&radius=50&key=${process.env.API_KEY}`;
-  request(apiCall, (err, response, body) => {
-    console.log(err,response,body);
-    res.send(body);
-  });
-});
+const appRouter = require('./config/routes.js');
+app.use(appRouter);
+
+// Moving to parks Controller and Routes
+// app.get('/api/grabParks', (req, res) => {
+//   let apiCall = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=dog%20parks&location=${req.query.latitude},${req.query.longitude}&radius=50&key=${process.env.API_KEY}`;
+//   request(apiCall, (err, response, body) => {
+//     console.log(err,response,body);
+//     res.send(body);
+//   });
+// });
 
 
 app.get('/*', (req, res) => {
   res.send('hello!');
 });
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+
 
 
 
