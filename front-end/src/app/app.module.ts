@@ -57,7 +57,7 @@ import { ConnectionsComponent } from './connections/connections.component';
     UserComponent,
     UserIndexComponent,
     UserEditComponent,
-    UserShowComponent
+    UserShowComponent,
     ConnectionsComponent,
     ProfileComponent
   ],
