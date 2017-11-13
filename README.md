@@ -75,7 +75,7 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Angular](https://angular.io/) 
+* [Angular 2+](https://angular.io/) 
 * [Nodejs](https://nodejs.org/en/) 
 * [Sequelize](http://docs.sequelizejs.com/) 
 
