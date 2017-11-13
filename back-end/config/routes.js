@@ -20,14 +20,11 @@ router.post('/api/users', usersController.create);
 router.get('/api/users/:id', usersController.show);
 
 // update
-router.get('/api/users/:id', usersController.update);
+router.put('/api/users/:id', usersController.update);
 
 // destroy
 router.get('/api/users/:id', usersController.destroy);
-router.put('/api/users:id', usersController.update);
 
-// destroy
-router.delete('/api/users:id', usersController.destroy);
 
 
 //============
