@@ -29,6 +29,9 @@ import { AuthGuardService } from './auth-guard.service';
 import { MapService } from './map/map-service.service';
 import { ApiService } from './services/api-service.service';
 import { UserComponent } from './user/user.component';
+import { UserIndexComponent } from './user/user-index/user-index.component';
+import { UserEditComponent } from './user/user-edit/user-edit.component';
+import { UserShowComponent } from './user/user-show/user-show.component';
 
 
 
@@ -45,7 +48,10 @@ import { UserComponent } from './user/user.component';
     MapComponent,
     HeaderComponent,
     LoginComponent,
-    UserComponent
+    UserComponent,
+    UserIndexComponent,
+    UserEditComponent,
+    UserShowComponent
   ],
   imports: [
     AgmCoreModule.forRoot({
