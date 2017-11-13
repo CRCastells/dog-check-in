@@ -3,8 +3,8 @@ const router = express.Router();
 const usersController = require('../controllers/users.js');
 const dogsController = require('../controllers/dogs.js');
 const parksController = require('../controllers/parks.js');
-// const connectionsController = require('../controllers.connections.js');
-// const checkinsController 	= require('../controllers.checkins.js');
+const connectionsController = require('../controllers/connections.js');
+// const checkinsController 	= require('../controllers/checkins.js');
 
 //============
 // User Routes
@@ -73,19 +73,19 @@ router.delete('api/parks/:id', parksController.destroy);
 //===================
 
 // // index
-// router.get('/api/connections/', connectionsController.index);
+router.get('/api/connections/', connectionsController.index);
 
 // // create
-// router.post('/api/connections/', connectionsController.create);
+router.post('/api/connections/', connectionsController.create);
 
 // // show
-// router.get('/api/connections/:id', connectionsController.show);
+router.get('/api/connections/:id', connectionsController.show);
 
 // // update
 // router.put('api/connections/:id', connectionsController.update);
 
 // // destroy
-// router.delete('api/connections/:id', connectionsController.destroy);
+router.delete('api/connections/:id', connectionsController.destroy);
 
 // //===============
 // // Checkin Routes
