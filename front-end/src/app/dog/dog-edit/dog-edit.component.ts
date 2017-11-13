@@ -7,10 +7,21 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class DogEditComponent implements OnInit {
+	updatedDog = {
+		name: 'fido',
+		breed: 'shiba',
+		fixed: true,
+		description: 'the goodest of boys',
+		age: 2,
+		picture: 'http://truecompanionstraining.com/wp-content/uploads/good-dog-school.jpg'
+	};
 
   constructor() { }
 
   ngOnInit() {
+  }
+  updateDog(updatedDog) {
+
   }
 
 }

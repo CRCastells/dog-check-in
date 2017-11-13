@@ -11,7 +11,7 @@ const routes: Routes = [
     {
         path: 'map',
         component: MapComponent,
-        canActivate: [AuthGuardService]
+        // canActivate: [AuthGuardService]
     },
     {
         path: 'login',

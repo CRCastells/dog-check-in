@@ -26,7 +26,12 @@ import * as firebase from 'firebase/app';
 
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './auth-guard.service';
+<<<<<<< HEAD
 import { ProfileComponent } from './profile/profile.component';
+=======
+import { MapService } from './map/map-service.service';
+import { ApiService } from './services/api-service.service';
+>>>>>>> a69d45a84725a069bdf292bf069e257c0ea1c30b
 
 
 
@@ -64,7 +69,9 @@ import { ProfileComponent } from './profile/profile.component';
   ],
   providers: [
     AuthService,
-    AuthGuardService
+    AuthGuardService,
+    MapService,
+    ApiService
   ],
   bootstrap: [AppComponent]
 })
