@@ -28,6 +28,8 @@ import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './auth-guard.service';
 
 import { ProfileComponent } from './profile/profile.component';
+import { FooterComponent } from './footer/footer.component';
+import { FollowersComponent } from './followers/followers.component';
 
 import { MapService } from './map/map-service.service';
 import { ApiService } from './services/api-service.service';
@@ -37,6 +39,7 @@ import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserShowComponent } from './user/user-show/user-show.component';
 import { UserRoutingModule } from './user/user-routing.module';
 import { ConnectionsComponent } from './connections/connections.component';
+
 
 
 
@@ -54,6 +57,9 @@ import { ConnectionsComponent } from './connections/connections.component';
     MapComponent,
     HeaderComponent,
     LoginComponent,
+    ProfileComponent,
+    FooterComponent,
+    FollowersComponent,
     UserComponent,
     UserIndexComponent,
     UserEditComponent,

@@ -5,7 +5,6 @@ let request = require('request');
 
 
 function index(req, res) {
-	console.log("route hit");
 	let apiCall = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=dog%20parks&location=${req.query.latitude},${req.query.longitude}&radius=50&key=${process.env.API_KEY}`;
     	request(apiCall, (err, response, body) => {
     	// console.log(err,response,body);
