@@ -22,7 +22,6 @@ export class ConnectionsComponent implements OnInit {
   	this.apiService.getAllUsers().subscribe( res => {
       this.connections = res.json();
       console.log(this.connections);
-      console.log(this.appComponent.test);
     })
   }
 
