@@ -4,7 +4,7 @@ const usersController = require('../controllers/users.js');
 const dogsController = require('../controllers/dogs.js');
 const parksController = require('../controllers/parks.js');
 const connectionsController = require('../controllers/connections.js');
-// const checkinsController 	= require('../controllers/checkins.js');
+const checkinsController 	= require('../controllers/checkin.js');
 
 //============
 // User Routes
@@ -95,7 +95,7 @@ router.delete('api/connections/:id', connectionsController.destroy);
 // router.get('/api/checkins/', checkinsController.index);
 
 // // create
-// router.post('/api/checkins/', checkinsController.create);
+router.post('/api/checkins/', checkinsController.create);
 
 // // show
 // router.get('/api/checkins/:id', checkinsController.show);
