@@ -15,6 +15,10 @@ export class ApiService {
   }
 
   ///USERS
+  getAllUsers(){
+    return this.http.get(`${this.baseUrl}/users/`);
+  }
+
   getOneUser(userId){
   	return this.http.get(`${this.baseUrl}/users/${userId}`);
   }
