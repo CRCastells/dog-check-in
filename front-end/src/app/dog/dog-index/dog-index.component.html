@@ -1,3 +1,12 @@
-<p>
-  dog-index works!
-</p>
+<div>
+  <ul>
+    <li *ngFor='let dog of dogs'>
+      <dt>{{dog.name}}</dt>
+      <dd>{{dog.age}}</dd>
+      <dd>{{dog.breed}}</dd>
+      <dd>{{dog.description}}</dd>
+      <dd>{{dog.fixed}}</dd>
+      <dd><img [src]=dog.img alt="dog"></dd>
+    </li>
+  </ul>
+</div>

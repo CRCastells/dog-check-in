@@ -5,6 +5,9 @@ const dogsController = require('../controllers/dogs.js');
 const parksController = require('../controllers/parks.js');
 // const connectionsController = require('../controllers.connections.js');
 // const checkinsController 	= require('../controllers.checkins.js');
+let multer = require('multer');
+let upload = multer({ dest: 'uploads/' });
+
 
 //============
 // User Routes
@@ -38,7 +41,7 @@ router.delete('/api/users:id', usersController.destroy);
 router.get('/api/dogs', dogsController.index);
 
 // create
-router.post('/api/dogs', dogsController.create);
+router.post('/api/dogs', upload.single('dog'), dogsController.create);
 
 // show
 router.get('/api/dogs/:id', dogsController.show);

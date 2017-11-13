@@ -6,6 +6,7 @@ import { MapComponent } from './map/map.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuardService } from './auth-guard.service';
 import { ProfileComponent } from './profile/profile.component';
+import { DogComponent } from './dog/dog.component';
 
 const routes: Routes = [
     {
