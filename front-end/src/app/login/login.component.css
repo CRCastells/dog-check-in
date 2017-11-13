@@ -1,0 +1,68 @@
+#containery {
+	background: grey;	
+	height: 100vh;
+
+}
+#back-img {
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	filter: brightness(1.5);
+}
+
+#login {
+	position: absolute;
+	background: #536878;
+	border-radius: 10px;
+	color: white;
+	height: 70vh;
+	width: 50vh;
+	left: 5vh;
+	top: 10vh;
+	margin: 25px;
+	font-family: 'Sigmar One';
+	z-index: 1;
+	opacity: 0.5;
+}
+
+button {
+	background: white;
+}
+
+#description {
+	position: absolute;
+	background: #536878;
+	border-radius: 10px;
+	font-family: 'Sigmar One';
+	top: 10vh;
+	height: 70vh;
+	width: 50vh;
+	left: 90vh;
+	margin: 25px;
+	z-index: 1;
+	color: white;
+	border: none;
+	opacity: 0.4;
+}
+
+p {
+	margin: 18px;
+}
+
+#login:hover {
+	transition: all .5s ease-in-out;
+	opacity: 0.85;
+	transform: scale(1.2);
+
+}
+
+#description:hover {
+	transition: all .5s ease-in-out;
+	opacity: 0.85;
+	transform: scale(1.2);
+
+}
+
+#card-h3 {
+	margin-top: 20px;
+}
