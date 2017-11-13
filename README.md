@@ -84,7 +84,7 @@ Add additional notes about how to deploy this on a live system
 * **Jared Pleva** 
 * **Cameron Castells** 
 * **Jeffrey Engleberg** 
-* **Quinn O'neil** 
+* **Quinn O'Neill** 
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
@@ -97,4 +97,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Hat tip to anyone who's code was used
 * Inspiration
 * etc
->>>>>>> 9605701d33db52ef301864de84f93a6da3ea3db6
+
