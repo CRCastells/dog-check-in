@@ -207,7 +207,7 @@ body {
 
 #nav-bar {
 	background: #536878;
-	background: -webkit-linear-gradient(left top, #536878, white 30%, #536878);
+	background: #C0C0C0;
 	margin-left: 5px;
 	margin-right: 0;
 	border-radius: 5px;
