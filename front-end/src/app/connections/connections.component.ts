@@ -1,4 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ApiService } from '../services/api-service.service';
+import { AppComponent } from '../app.component';
+
 
 @Component({
   selector: 'app-connections',
@@ -8,9 +11,20 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class ConnectionsComponent implements OnInit {
 
-  constructor() { }
+	connections: any;
+
+  constructor(
+  	private apiService: ApiService,
+    private appComponent: AppComponent
+  ) { }
 
   ngOnInit() {
+  	this.apiService.getAllUsers().subscribe( res => {
+      this.connections = res.json();
+      console.log(this.connections);
+      console.log(this.appComponent.test);
+    })
   }
+
 
 }
