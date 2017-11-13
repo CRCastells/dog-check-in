@@ -1,8 +1,10 @@
-
+body {
+	background: #C0C0C0;
+}
 #img-container {
 	height: 200px;
 	width: 100%;
-	background: white;
+	background: #C0C0C0;
 	margin-right: 5px;
 	border-radius: 10px;
 }

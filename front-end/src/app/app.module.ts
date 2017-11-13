@@ -26,6 +26,9 @@ import * as firebase from 'firebase/app';
 
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './auth-guard.service';
+
+import { ProfileComponent } from './profile/profile.component';
+
 import { MapService } from './map/map-service.service';
 import { ApiService } from './services/api-service.service';
 import { UserComponent } from './user/user.component';
@@ -33,6 +36,8 @@ import { UserIndexComponent } from './user/user-index/user-index.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserShowComponent } from './user/user-show/user-show.component';
 import { UserRoutingModule } from './user/user-routing.module';
+import { ConnectionsComponent } from './connections/connections.component';
+
 
 
 
@@ -53,6 +58,8 @@ import { UserRoutingModule } from './user/user-routing.module';
     UserIndexComponent,
     UserEditComponent,
     UserShowComponent
+    ConnectionsComponent,
+    ProfileComponent
   ],
   imports: [
     AgmCoreModule.forRoot({
