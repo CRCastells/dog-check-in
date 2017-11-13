@@ -7,15 +7,16 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuardService } from './auth-guard.service';
 import { ProfileComponent } from './profile/profile.component';
 import { FollowersComponent } from './followers/followers.component';
+import { ConnectionsComponent } from './connections/connections.component';
 
 const routes: Routes = [
     {
         path: 'map',
         component: MapComponent,
-        // canActivate: [AuthGuardService]
+        canActivate: [AuthGuardService]
     },
     {
-        path: 'login',
+        path: '',
         component: LoginComponent
     },
     {
@@ -26,6 +27,9 @@ const routes: Routes = [
     {
       path: 'followers',
       component: FollowersComponent,
+
+      path: 'connections',
+      component: ConnectionsComponent,
       canActivate: [AuthGuardService]
     }
 ]

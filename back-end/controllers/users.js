@@ -6,7 +6,7 @@ const Dog = db.models.Dog;
 
 
 function index(req, res) {
-	User.findAll().then(function(users) {
+	User.findAll({include: Dog}).then(function(users) {
 		res.json(users);
 	});
 }
@@ -20,6 +20,7 @@ function show(req, res) {
 }
 
 function create(req, res) {
+	console.log(req.body);
 	User.create(req.body).then(function(user){
 		if(!user) res.send("user not saved");
 		else res.json(user);

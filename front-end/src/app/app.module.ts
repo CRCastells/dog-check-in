@@ -32,6 +32,14 @@ import { FooterComponent } from './footer/footer.component';
 import { FollowersComponent } from './followers/followers.component';
 
 import { MapService } from './map/map-service.service';
+import { ApiService } from './services/api-service.service';
+import { UserComponent } from './user/user.component';
+import { UserIndexComponent } from './user/user-index/user-index.component';
+import { UserEditComponent } from './user/user-edit/user-edit.component';
+import { UserShowComponent } from './user/user-show/user-show.component';
+import { UserRoutingModule } from './user/user-routing.module';
+import { ConnectionsComponent } from './connections/connections.component';
+
 
 
 
@@ -51,7 +59,13 @@ import { MapService } from './map/map-service.service';
     LoginComponent,
     ProfileComponent,
     FooterComponent,
-    FollowersComponent
+    FollowersComponent,
+    UserComponent,
+    UserIndexComponent,
+    UserEditComponent,
+    UserShowComponent,
+    ConnectionsComponent,
+    ProfileComponent
   ],
   imports: [
     AgmCoreModule.forRoot({
@@ -64,6 +78,7 @@ import { MapService } from './map/map-service.service';
     ReactiveFormsModule,
     AppRoutingModule,
     DogRoutingModule,
+    UserRoutingModule,
  
     AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
     AngularFireDatabaseModule,
@@ -73,7 +88,8 @@ import { MapService } from './map/map-service.service';
   providers: [
     AuthService,
     AuthGuardService,
-    MapService
+    MapService,
+    ApiService
   ],
   bootstrap: [AppComponent]
 })

@@ -5,7 +5,7 @@
 #user-container {
 	width: 100%;
 	height: 800px;
-	border-radius: 2px;
+	border-radius: 5px;
 	background: -webkit-linear-gradient(left top, #536878, #C0C0C0 30%, #536878);
 	margin-left: 20px;
 }
@@ -25,7 +25,7 @@
 #pics {
 	width: 100%;
 	height: 800px;
-	border-radius: 2px;
+	border-radius: 5px;
 	background: #536878;
 	background: -webkit-linear-gradient(left top, white, #536878 30%, white);
 }
@@ -45,7 +45,7 @@
 #fav-parks {
 	width: 100%;
 	height: 800px;
-	border-radius: 2px;
+	border-radius: 5px;
 	margin-right: 15px;
 	background: #536878;
 	background: -webkit-linear-gradient(left top, #536878, #C0C0C0 30%, #536878);
@@ -140,4 +140,25 @@
 	margin: 15px 15px 15px 25px;
 	border-radius: 50px;
 	border: 2px solid #C0C0C0;
+}
+
+#dog-pic-1 {
+	width: 100%;
+	height: 200px;
+	margin: 15px;
+	border-radius: 50px;
+}
+
+#dog-pic-2 {
+	width: 100%;
+	height: 200px;
+	margin: 15px;
+	border-radius: 50px;
+}
+
+#dog-pic-3 {
+	width: 100%;
+	height: 200px;
+	margin: 15px;
+	border-radius: 50px;
 }

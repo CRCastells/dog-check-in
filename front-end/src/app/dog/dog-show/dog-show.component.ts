@@ -8,7 +8,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class DogShowComponent implements OnInit {
 	
-	oneDog: object = {
+	oneDog = {
 		name :'Fido',
 		breed:'Shiba',
 		fixed: true,
