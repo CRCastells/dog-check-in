@@ -16,5 +16,7 @@ export class MapService {
 
   getInfo(marker) {
   	console.log("Current Location: ", marker, "Current User: ", this.user);
+    let checkin = {marker, user: this.user}
+    return this.http.post(`/api/checkins`,checkin);
   }
 }
