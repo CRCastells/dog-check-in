@@ -14,8 +14,7 @@ export class ConnectionsComponent implements OnInit {
 	connections: any;
 
   constructor(
-  	private apiService: ApiService,
-    private appComponent: AppComponent
+  	private apiService: ApiService
   ) { }
 
   ngOnInit() {
