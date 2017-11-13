@@ -26,8 +26,12 @@ import * as firebase from 'firebase/app';
 
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './auth-guard.service';
+
+import { ProfileComponent } from './profile/profile.component';
+
 import { MapService } from './map/map-service.service';
 import { ApiService } from './services/api-service.service';
+
 
 
 
@@ -43,7 +47,8 @@ import { ApiService } from './services/api-service.service';
     DogComponent,
     MapComponent,
     HeaderComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     AgmCoreModule.forRoot({
