@@ -6,7 +6,7 @@ Dog Check-In is a user-friendly social media site that connects dog owners and a
 ## Wireframes
 
 Log In:
-![alt text](front-end/src/assets/Log-in.png "Log-In Page")
+![alt text](./front-end/src/assets/Log-in.png "Log-In Page")
 
 Map-Page: 
 ![alt text](front-end/src/assets/Map-page.png "Log-In Page")
@@ -14,7 +14,9 @@ Map-Page:
 ## Development Process
 
 ### Database ERD
-<div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://www.lucidchart.com/documents/embeddedchart/6c00b2b9-f19e-4591-ba9c-b796d2a58991" id="fteOhHkW-v28"></iframe></div>
+![alt text](front-end/src/assets/DBerd.png "Db ERD")
+
+<!---<div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://www.lucidchart.com/documents/embeddedchart/6c00b2b9-f19e-4591-ba9c-b796d2a58991" id="fteOhHkW-v28"></iframe></div>-->
 
 
 ## Getting Started
