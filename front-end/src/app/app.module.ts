@@ -31,6 +31,7 @@ import { ProfileComponent } from './profile/profile.component';
 
 import { MapService } from './map/map-service.service';
 import { ApiService } from './services/api-service.service';
+import { ConnectionsComponent } from './connections/connections.component';
 
 
 
@@ -48,6 +49,7 @@ import { ApiService } from './services/api-service.service';
     MapComponent,
     HeaderComponent,
     LoginComponent,
+    ConnectionsComponent,
     ProfileComponent
   ],
   imports: [
