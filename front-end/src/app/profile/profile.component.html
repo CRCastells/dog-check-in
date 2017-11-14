@@ -1,68 +1,16 @@
-<div class="row">
-
-	<!-- ** USER Column/ Dog List -->
-	<div id="user-container" class="col-md">
-		<div class="row">
-			<h3 id="user-h3">Quinn O'Neill</h3>
-			<div id="dog1" class="col-md-4">
-				<h6>Doggie</h6>
-				<p>Breed</p>
-				<p>Age</p>
-				<p>Fixed?</p>
-				<p>description</p>
-			</div>
-			<div id="dog2" class="col-md-4">
-				<h6>Doggie</h6>
-				<p>Breed</p>
-				<p>Age</p>
-				<p>Fixed?</p>
-				<p>description</p>
-			</div>
-			<div id="dog3" class="col-md-4">
-				<h6>Doggie</h6>
-				<p>Breed</p>
-				<p>Age</p>
-				<p>Fixed?</p>
-				<p>description</p>
-			</div>
-		</div>	
-		<button id="new-dog-btn" class="btn">New Dog</button>	
-	</div>	
-
-	<!-- PICS Column || User Uploads -->
-	<div id="pics" class="col-md">
-		<div class="row">
-			<h3 id="pic-h3">Pics</h3>
-			<div class="col-md-5">
-				<img id="dog-pic-1" src="http://cdn-www.dailypuppy.com/dog-images/buddy-the-blue-heeler_77498_2016-08-21_w450.jpg">
-			</div>
-			<div class="col-md-5">
-				<img id="dog-pic-2" src="https://retrieverman.files.wordpress.com/2011/06/red-and-blue-heeler.jpg">
-			</div>	
-			<div class="col-md-5">
-				<img id="dog-pic-3" src="https://irp-cdn.multiscreensite.com/afb29759/dms3rep/multi/mobile/female%20yorkie-well-groomed-001-min-200x200.jpg">
-			</div>	
-		</div>	
-		<button id="new-pic-btn" class="btn">Add Pic</button>	
-	</div>	
-	
-	<!-- Favorite Parks -->
-	<div id="fav-parks" class="col-md">
-		<div class="row">
-			<h3 id="parks-h3">Favorite Parks</h3>
-			<div id="park1" class="col-md-4">
-				<h6>Park 1</h6>
-				<p>Address</p>
-				<p>#Times Checked-in</p>
-				<p>Thumbs Up</p>			
-			</div>	
-			<div id="park2" class="col-md-4">
-				<h6>Park 2</h6>
-				<p>Address</p>
-				<p>#Times Checked-In</p>
-				<p>Thumbs Up</p>
-			</div>	
-		</div>	
-		<button id="new-park-btn" class="btn">New Park</button>
-	</div>	
+<div class="card text-center card-inverse card-info mb-3" *ngIf="oneUser">
+<div class="card-block">
+    <h1 class="card-title">{{oneUser.name}}</h1>
+    <h3>{{oneUser.email}}</h3>
+    <img class="card-img-top" src="{{oneUser.image}}">
 </div>
+
+	<div class="card-text" *ngFor="let dog of oneUser.dogs">
+		  		<h4>{{dog.name}}</h4>
+		  		<a routerLink="../dogs/{{dog.id}}"><img src="{{dog.image}}" style="width: 20rem;"></a> 
+					<p>{{dog.description}}</p>
+		  	
+</div>
+</div>
+
+
