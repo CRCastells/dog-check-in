@@ -10,7 +10,7 @@ export class ApiService {
     if(isDevMode()) {
       this.baseUrl = 'http://localhost:3000/api';
     } else {
-      this.baseUrl = '';
+      this.baseUrl = 'api';
     }
   }
 

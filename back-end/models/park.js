@@ -4,7 +4,8 @@ module.exports = function(sequelize, Sequelize) {
 		address: Sequelize.STRING,
 		lat: Sequelize.DECIMAL,
 		lng: Sequelize.DECIMAL,
-		image: Sequelize.STRING
+		image: Sequelize.STRING,
+		rating: Sequelize.DECIMAL
 	});
 	return model;
 };
