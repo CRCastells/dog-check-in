@@ -6,7 +6,8 @@
   "scripts": {
     "deploy": "cd front-end && ng build --aot -prod -op ../back-end/dist && cd ..",
     "start": "cd back-end/ && node server.js",
-    "postinstall": "cd back-end && npm install && cd ../front-end && npm install"
+    "postinstall": "cd back-end && npm install && cd ../front-end && npm install",
+    "go" : "npm run deploy && npm run start"
   },
   "repository": {
     "type": "git",

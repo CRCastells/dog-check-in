@@ -11,7 +11,7 @@ import { AuthService} from '../services/auth.service';
 })
 export class ProfileComponent implements OnInit {
 
-oneUser;
+  oneUser;
 
   constructor(
   	private apiService: ApiService,
