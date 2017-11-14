@@ -19,7 +19,11 @@ import { UserComponent } from './user/user.component';
 import { UserIndexComponent } from './user/user-index/user-index.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { ConnectionsComponent } from './connections/connections.component';
+
+import { AboutComponent } from './about/about.component';
+
 import { UserShowComponent } from './user/user-show/user-show.component';
+
 
 import { environment } from '../environments/environment';
 import * as firebase from 'firebase/app';
@@ -39,7 +43,8 @@ import { ApiService } from './services/api-service.service';
     UserEditComponent,
     UserShowComponent,
     ConnectionsComponent,
-    ProfileComponent
+    ProfileComponent,
+    AboutComponent
   ],
   imports: [
     AgmCoreModule.forRoot({
