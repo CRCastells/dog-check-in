@@ -1,0 +1,12 @@
+.cards {
+	position: relative;
+	left: 100px;
+}
+
+.card {
+	margin-bottom: 24px;
+}
+
+button {
+	float: right;
+}

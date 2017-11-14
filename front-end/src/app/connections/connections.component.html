@@ -1,3 +1,23 @@
-<p>
-  connections works!
-</p>
+<div class="container-fluid">
+	<div class="row container cards">
+		<div *ngFor="let connection of connections">
+			<div class="col-sm-6">
+				<div class="card" style="width: 30rem;">
+					<div class="card-header">
+						<button class="btn btn-primary">Follow {{connection.name}}</button>
+					</div>
+				  <img class="card-img-top" src="{{connection.image}}" alt="Card image cap">
+				  <div class="card-block">
+				    <h4 class="card-title">{{connection.name}}</h4>
+				    <h3> - Dog Squad - </h3>
+				  	<div class="card-text" *ngFor="let dog of connection.dogs">
+				  		<h4>{{dog.name}}</h4>
+				  		<a routerLink="../dogs/{{dog.id}}"><img src="{{dog.image}}" style="width: 20rem;"></a>
+							<p>{{dog.description}}</p>
+				  	</div>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

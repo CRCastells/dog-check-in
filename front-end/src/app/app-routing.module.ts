@@ -7,20 +7,31 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuardService } from './auth-guard.service';
 import { ProfileComponent } from './profile/profile.component';
 import { DogComponent } from './dog/dog.component';
+import { FollowersComponent } from './followers/followers.component';
+import { ConnectionsComponent } from './connections/connections.component';
 
 const routes: Routes = [
     {
-        path: 'map',
-        component: MapComponent,
-        canActivate: [AuthGuardService]
+      path: 'map',
+      component: MapComponent,
+      canActivate: [AuthGuardService]
     },
     {
-        path: '',
-        component: LoginComponent
+      path: '',
+      component: LoginComponent
     },
     {
       path: 'profile',
       component: ProfileComponent,
+      canActivate: [AuthGuardService]
+    },
+    {
+      path: 'followers',
+      component: FollowersComponent,
+    },
+    {
+      path: 'connections',
+      component: ConnectionsComponent,
       canActivate: [AuthGuardService]
     }
 ]

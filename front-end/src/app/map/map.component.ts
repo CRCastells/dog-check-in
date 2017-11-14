@@ -97,7 +97,6 @@ export class MapComponent implements OnInit {
         let name = data.name;
         let address = data.formatted_address;
         let rating = data.rating;
-        // console.log(data);
         markers.push({
          "lat": lat,
          "lng": lng,
@@ -113,15 +112,13 @@ export class MapComponent implements OnInit {
   }
 
   checkIn(marker){
-    this.mapService.getInfo(marker);
+    this.mapService.getInfo(marker).subscribe(res => {
+      console.log(res.json());
+    });
   }
 
   getDirections(){
     console.log("Opening Google Maps");
-  }
-
-  favoritePark(marker){
-    this.mapService.getInfo(marker);  
   }
 
 }

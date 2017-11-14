@@ -20,22 +20,24 @@ const Connection = sequelize.import('./connection');
 Dog.belongsTo(User);
 User.hasMany(Dog);
 
-Checkin.belongsTo(User);
-User.hasMany(Checkin);
+// Checkin.belongsTo(User);
+// User.hasMany(Checkin);
 
-Checkin.belongsTo(Park);
-Park.hasMany(Checkin);
+// Checkin.belongsTo(Park);
+// Park.hasMany(Checkin);
 
-User.belongsToMany(Follower, {as: 'followerId', through: 'connection',foreignKey: 'userId'});
-Follower.belongsToMany(User, {as: 'userId', through: 'connection',foreignKey: 'userId'});
+User.belongsToMany(Park, { as: 'checkedInUser', through: 'checkin', foreignKey: 'userId' });
+Park.belongsToMany(User, { as: 'parkId', through: 'checkin', foreignKey: 'parkId' });
+
+User.belongsToMany(Follower, { as: 'followerId', through: 'connection', foreignKey: 'userId' });
+Follower.belongsToMany(User, { as: 'userId', through: 'connection', foreignKey: 'userId' });
 
 
 // Export models
 module.exports.models = {
-	User: User,
-	Park: Park,
-	Dog: Dog,
-	Checkin: Checkin,
-	Connection:Connection
+    User: User,
+    Park: Park,
+    Dog: Dog,
+    Checkin: Checkin,
+    Connection: Connection
 };
-

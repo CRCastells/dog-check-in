@@ -6,7 +6,7 @@ const Dog = db.models.Dog;
 
 
 function index(req, res) {
-	User.findAll().then(function(users) {
+	User.findAll({include: Dog}).then(function(users) {
 		res.json(users);
 	});
 }
