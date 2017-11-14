@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
+
+
+
 @Component({
   selector: 'app-user-show',
   templateUrl: './user-show.component.html',
@@ -11,6 +14,7 @@ export class UserShowComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
