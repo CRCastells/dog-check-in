@@ -125,7 +125,7 @@ export class MapComponent implements OnInit {
   }
 
   getDirections(){
-    console.log("Opening Google Maps");
+    // console.log("Opening Google Maps");
   }
 
 }

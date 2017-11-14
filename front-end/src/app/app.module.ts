@@ -29,7 +29,6 @@ import { AuthGuardService } from './auth-guard.service';
 
 import { ProfileComponent } from './profile/profile.component';
 import { FooterComponent } from './footer/footer.component';
-import { FollowersComponent } from './followers/followers.component';
 
 import { MapService } from './map/map-service.service';
 import { ApiService } from './services/api-service.service';
@@ -59,7 +58,6 @@ import { ConnectionsComponent } from './connections/connections.component';
     LoginComponent,
     ProfileComponent,
     FooterComponent,
-    FollowersComponent,
     UserComponent,
     UserIndexComponent,
     UserEditComponent,
