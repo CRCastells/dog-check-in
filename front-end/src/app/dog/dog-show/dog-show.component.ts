@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ApiService } from '../../services/api-service.service';
+import { ActivatedRoute, Router } from '@angular/router'
 
 @Component({
   selector: 'app-dog-show',
@@ -17,8 +19,23 @@ export class DogShowComponent implements OnInit {
 		image: 'http://truecompanionstraining.com/wp-content/uploads/good-dog-school.jpg'
 	};
 
-  constructor() { }
+  constructor(
+  	private apiService : ApiService,
+  	private route : ActivatedRoute,
+  	private router : Router
+ 	) { }
 
   ngOnInit() {
+  	this.route.paramMap.subscribe(params => {
+  		this.apiService.getOneDog(params.get('id')).subscribe(res => {
+  			this.oneDog = res.json();
+  		});
+  	});
+  }
+
+  deleteDog(oneDog){
+  	this.apiService.deleteDog(oneDog).subscribe(res => {
+  		this.router.navigateByUrl('profile');
+  	});
   }
 }

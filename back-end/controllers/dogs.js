@@ -25,7 +25,7 @@ function create(req, res) {
 }
 
 function update(req, res) {
-	Dog.update(req.params.id)
+	Dog.findById(req.params.id)
 	.then(function(dog){
 		if(!dog) res.send("dog not found");
 		else return dog.updateAttributes(req.body);

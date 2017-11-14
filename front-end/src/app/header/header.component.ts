@@ -20,7 +20,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.user = JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]]);
-    console.log("console log!!!" + this.user)
   }
 
 
