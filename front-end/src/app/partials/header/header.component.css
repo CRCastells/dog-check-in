@@ -3,7 +3,7 @@ body {
 }
 
 header {
-	background-image: url('../../assets/dog-park2.png');
+	background-image: url('../../../assets/dog-park2.png');
 	background-position: center;
 	background-size: cover;
 	height: 175px;

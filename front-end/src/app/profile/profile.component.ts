@@ -23,7 +23,7 @@ export class ProfileComponent implements OnInit {
   	
 	this.apiService.getOneUser(this.authService.grabUser())
 	.subscribe(response => {
-		console.log(response.json());
+		// console.log(response.json());
 		this.oneUser = response.json();
 	})
 	

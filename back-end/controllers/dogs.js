@@ -17,7 +17,7 @@ function show(req, res) {
 }
 
 function create(req, res) {
-	console.log(req);
+	// console.log(req);
 	Dog.create(req.body).then(function(dog){
 		if(!dog) res.send("dog not saved");
 		else res.json(dog);
