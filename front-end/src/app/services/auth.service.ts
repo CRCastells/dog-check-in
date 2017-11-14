@@ -17,7 +17,7 @@ export class AuthService {
   		(user) => {
   			if (user) {
   				this.userDetails = user;
-  				console.log(this.userDetails);
+  				// console.log(this.userDetails);
   			}
   			else {
   			  	this.userDetails = null;
@@ -50,6 +50,6 @@ grabUser() {
 
   logout() {
     this._firebaseAuth.auth.signOut()
-    .then((res) => this.router.navigate(['/login']));
+    .then((res) => this.router.navigateByUrl(''));
   }
 }

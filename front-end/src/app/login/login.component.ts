@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
  		this.userInfo = JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]])
  		let newUser = res.additionalUserInfo;
  		let firebaseId = this.userInfo.uid;
- 		console.log(newUser);
+ 		// console.log(newUser);
  		let userObject = {
  			firebase_id: firebaseId,
  			name: newUser.profile.name,
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
  		if(newUser.isNewUser) {
  			this.apiService.createUser(userObject)
  			.subscribe(res => {
- 				console.log(res.json());
+ 				// console.log(res.json());
  			})
  		}
  		this.router.navigateByUrl('/map')
