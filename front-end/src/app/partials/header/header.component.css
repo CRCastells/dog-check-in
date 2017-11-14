@@ -277,7 +277,7 @@ h3 {
 	transition: all .3s ease-out;
 }
 
-#link1:hover, #link2:hover, #link3:hover {
+#link0:hover, #link1:hover, #link2:hover, #link3:hover, #link4:hover {
 	color: white;
 	text-decoration: underline;
 	transform: scale(1.2);

@@ -55,6 +55,12 @@ button {
 	transition: all .5s ease-out;
 }
 
+h6 {
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: -10px;
+}
+
 p {
 	margin: 18px;
 }

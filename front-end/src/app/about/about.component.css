@@ -1,0 +1,48 @@
+.card {
+	font-family: 'Sigmar One';
+	color: black;
+}
+
+h1 {
+	color: black;
+}
+
+a {
+	color: blue;
+}
+
+p {
+	font-family: sans-serif;
+}
+
+#jared {
+	color: black;
+}
+
+#cameron {
+	color: black;
+}
+
+#jeff {
+	color: black;
+}
+
+#quinn {
+	color: black;
+}
+
+#jared-img {
+	margin-left: 20px;
+	height: 40vh;
+	width: 15%;
+	border-radius: 10px;
+}
+
+
+#cam-img, #jeff-img, #quinn-img {
+	margin-left: 20px;
+	height: 40vh;
+	width: 30%;
+	border-radius: 10px;
+}
+
