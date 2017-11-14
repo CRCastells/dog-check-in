@@ -3,7 +3,7 @@ const router = express.Router();
 const usersController = require('../controllers/users.js');
 const dogsController = require('../controllers/dogs.js');
 const parksController = require('../controllers/parks.js');
-const connectionsController = require('../controllers.connections.js');
+const connectionsController = require('../controllers/connections.js');
 // const checkinsController 	= require('../controllers.checkins.js');
 
 //============

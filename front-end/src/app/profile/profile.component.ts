@@ -1,4 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ApiService } from '../services/api-service.service';
+import { AppComponent } from '../app.component';
+import { AuthService} from '../services/auth.service';
 
 @Component({
   selector: 'app-profile',
@@ -8,9 +11,22 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+oneUser;
+
+  constructor(
+  	private apiService: ApiService,
+  	private appComponent: AppComponent,
+  	private authService: AuthService
+  	) { }
 
   ngOnInit() {
+  	
+	this.apiService.getOneUser(this.authService.grabUser())
+	.subscribe(response => {
+		console.log(response.json());
+		this.oneUser = response.json();
+	})
+	
   }
 
 }

@@ -12,7 +12,7 @@ function index(req, res) {
 }
 
 function show(req, res) {
-	User.findById(req.params.id, {include: Dog})//, {include: Connection}, {include: Checkin}
+	User.findOne({where:{firebase_id:req.params.id}}, {include: Dog})//, {include: Connection}, {include: Checkin}
 	.then(function(user){
 		if(!user) res.send("user not found");
 		else res.json(user);
