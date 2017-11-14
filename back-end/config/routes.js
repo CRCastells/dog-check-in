@@ -95,7 +95,7 @@ router.delete('api/connections/:id', connectionsController.destroy);
 router.post('/api/checkins/', checkinsController.create);
 
 // // show
-router.get('/api/checkins/:name', checkinsController.show);
+router.post('/api/checkins/retrieve', checkinsController.show);
 
 // // update
 // router.put('api/checkins/:id', checkinsController.update);

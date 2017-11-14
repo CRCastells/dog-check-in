@@ -4,7 +4,7 @@ import { Http } from '@angular/http';
 @Injectable()
 export class MapService {
 
-	  user: object = JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]]);
+	  user: object;
 		latitude: number;
 		longitude: number;
 		zoom: number;
@@ -15,13 +15,18 @@ export class MapService {
   ) { }
 
   checkIn(marker) {
-  	console.log("Current Location: ", marker, "Current User: ", this.user);
-    let checkin = {marker, user: this.user}
+    let user = JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]]);
+   //  console.log(window.localStorage);
+  	// console.log("Current Location: ", marker, "Current User: ", user);
+    let checkin = {marker, user}
     return this.http.post(`/api/checkins/`, checkin);
   }
 
   getCheckIns(marker) {
-    console.log("Current Location: ", marker, "Current User: ", this.user);
-    return this.http.get(`/api/checkins/${marker.name}`, marker.name);
+    let user = JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]]);
+    // console.log(window.localStorage);
+    // console.log("Current Location: ", marker, "Current User: ", user);
+    let checkin = {marker, user}    
+    return this.http.post(`/api/checkins/retrieve/`, checkin);
   }
 }

@@ -16,7 +16,7 @@ import { MapService } from './map-service.service';
 })
 export class MapComponent implements OnInit {
 
-  user: object = JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]]);
+  user: object;
 	latitude: number;
 	longitude: number;
 	searchControl: FormControl;
@@ -120,7 +120,7 @@ export class MapComponent implements OnInit {
 
   checkIn(marker){
     this.mapService.checkIn(marker).subscribe(res => {
-      console.log(res.json());
+      // console.log(res.json());
     });
   }
 
