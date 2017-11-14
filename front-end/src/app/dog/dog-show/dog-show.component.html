@@ -6,9 +6,10 @@
     <p class="card-text">{{oneDog.description}}</p>
     <div class="good" *ngIf='oneDog.fixed else elseBlock'>Fixed</div>
     <ng-template #elseBlock>
-      <div class="bad">unFixed</div>
+      <div class="bad">NOT Fixed</div>
     </ng-template>
   </div>
   <div class="card-footer"></div>
-  <a routerLink='edit'><button>EDIT</button></a>
+  <a routerLink='edit'><button class="btn btn-primary">EDIT</button></a>
+  <button (click)='deleteDog(oneDog)' class="btn btn-danger">DELETE</button>
 </div>

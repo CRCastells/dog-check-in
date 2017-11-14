@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ApiService } from '../../services/api-service.service';
 
 @Component({
   selector: 'app-dog-edit',
@@ -16,12 +18,23 @@ export class DogEditComponent implements OnInit {
 		image: 'http://truecompanionstraining.com/wp-content/uploads/good-dog-school.jpg'
 	};
 
-  constructor() { }
+  constructor(
+    private route : ActivatedRoute,
+    private apiService : ApiService,
+    private router : Router
+  ) { }
 
   ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      this.apiService.getOneDog(params.get('id')).subscribe(res => {
+        this.updatedDog = res.json();
+      });
+    });
   }
   updateDog(updatedDog) {
-
+    this.apiService.updateDog(updatedDog).subscribe(res => {
+      this.router.navigateByUrl(`/dogs/${res.json().id}`)
+    })
   }
 
 }
