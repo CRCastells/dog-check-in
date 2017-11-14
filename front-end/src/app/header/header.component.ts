@@ -10,7 +10,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  user: object = JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]]);
+  user: any;
 
   constructor(private authService : AuthService){}
 
@@ -19,6 +19,8 @@ export class HeaderComponent implements OnInit {
 	}
 
   ngOnInit() {
+    this.user = JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]]);
+    console.log("console log!!!" + this.user)
   }
 
 
