@@ -34,6 +34,10 @@ signInWithGoogle() {
 		)
 }
 
+grabUser() {
+  return this.userDetails.uid;
+}
+
 
   isLoggedIn() {
   if (this.userDetails == null ) {

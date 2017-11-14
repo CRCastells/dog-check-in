@@ -1,0 +1,78 @@
+#containery {
+	background-image: url('../../assets/backgroundFR.png');
+	background-size: cover;	
+	height: 100vh;
+
+}
+
+
+h1 {
+	text-align: center;
+	z-index: 1;
+	background: transparent;
+	color: white;
+	padding-top: 40px;
+	font-family: 'Sigmar One';
+}
+
+@mixin add-gutters($size) {
+    margin-right: -$size;
+    margin-left: -$size;
+}
+
+.row {
+	@include add-gutter-size(50px);
+}
+
+#login {
+	background: black;
+	border-radius: 10px;
+	color: white;
+	height: 20vh;
+	width: 100%;
+	margin: 30px 30px 30px 40px;
+	font-family: 'Sigmar One';
+	z-index: 1;
+	opacity: 0.3;
+	transition: all .5s ease-out;
+}
+
+button {
+	background: white;
+}
+
+#description {
+	background: black;
+	border-radius: 10px;
+	font-family: 'Sigmar One';
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	margin: 30px 30px 30px 80px;
+	color: white;
+	border: none;
+	opacity: 0.3;
+	transition: all .5s ease-out;
+}
+
+p {
+	margin: 18px;
+}
+
+#login:hover {
+	transition: all .5s ease-in-out;
+	opacity: 0.75;
+	transform: scale(1.2);
+
+}
+
+#description:hover {
+	transition: all .5s ease-in-out;
+	opacity: 0.75;
+	transform: scale(1.2);
+
+}
+
+#card-h3 {
+	margin-top: 20px;
+}
