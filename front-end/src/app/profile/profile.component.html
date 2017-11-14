@@ -1,8 +1,16 @@
-<div *ngIf="oneUser">
-	<h2>{{oneUser.name}}</h2>
-	<h3>{{oneUser.email}}</h3>
-<!-- 	<img [src]={{Oneuser.image}}> -->
-	<ul>
-<!-- 	  <li *ngFor="let dog of oneUser.dogs">{{dog.name}}</li> -->
-	</ul>
+<div class="card text-center card-inverse card-info mb-3" *ngIf="oneUser">
+<div class="card-block">
+    <h1 class="card-title">{{oneUser.name}}</h1>
+    <h3>{{oneUser.email}}</h3>
+    <img class="card-img-top" src="{{oneUser.image}}">
 </div>
+
+	<div class="card-text" *ngFor="let dog of oneUser.dogs">
+		  		<h4>{{Oneuser.dog.name}}</h4>
+		  		<a routerLink="../dogs/{{oneUser.dog.id}}"><img src="{{oneUser.dog.image}}" style="width: 20rem;"></a>
+					<p>{{dog.description}}</p>
+		  	
+</div>
+</div>
+
+

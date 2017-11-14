@@ -2,7 +2,7 @@ const db = require('../models');
 const Connection = db.models.Connection;
 
 function index(req, res) {
-	Connection.findAll().terhn(function(connections) {
+	Connection.findAll().then(function(connections) {
 		res.json(connections);
 	});
 }

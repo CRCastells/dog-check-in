@@ -19,8 +19,8 @@ export class ApiService {
     return this.http.get(`${this.baseUrl}/users/`);
   }
 
-  getOneUser(firebaseId){
-  	return this.http.get(`${this.baseUrl}/users/${firebaseId}`);
+  getOneUser(userId){
+  	return this.http.get(`${this.baseUrl}/users/${userId}`);
   }
 
   createUser(newUser){
