@@ -12,7 +12,6 @@ export class HeaderComponent implements OnInit {
 
   user: any;
 
-
   constructor(private authService : AuthService){}
 
 	logout() {
@@ -21,7 +20,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.user = JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]]);
-    console.log(this.user);
   }
+
 
 }
