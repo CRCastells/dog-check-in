@@ -1,5 +1,5 @@
 var DB = require("../models");
 
-DB.sequelize.sync({force: true}).then(function(){
+DB.sequelize.sync({force: false}).then(function(){
   process.exit();
 });

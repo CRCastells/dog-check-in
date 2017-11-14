@@ -4,10 +4,8 @@ const Park = db.models.Park;
 const User = db.models.User;
 
 module.exports.create = (req, res) => {
-    console.log('PARK INFO:', req.body.marker);
     let park = req.body.marker;
     let firebase_id = req.body.user.uid;
-    console.log('USER FIREBASEID:', req.body.user.uid);
     Park.findOrCreate({ where: park })
         .spread((parkdata, created) => {
             console.log(parkdata.dataValues);
@@ -17,20 +15,30 @@ module.exports.create = (req, res) => {
                 }
             })
             .then(function(userdata) {
-            	console.log(userdata);
-            	Checkin.create({parkId:parkdata.dataValues.id,userId:userdata.dataValues.id})
+            	console.log("then",userdata.dataValues);
+            	Checkin.upsert({parkId:parkdata.dataValues.id,userId:userdata.dataValues.id})
             		.then(response => {
             			console.log(response);
             		});
+            })
+            .catch(function(err) {
+                // // print the error details
+                // console.log(err);
             });
         });
+};
 
-
-    //check to see if park is in DB
-    //if yes
-    //create new checking with userid and parkid
-    //no
-    //create new park in db
-    //find user based off of firebaseID
-    //create new checking with userid and parkid
+module.exports.show = (req, res) => {
+    console.log(req.params.name);
+    Park.findAll({where: {name: req.params.name}})
+    .then(parks => {
+        let park = parks[0].dataValues.id;
+        console.log(park);
+        Checkin.findAll({where: {parkId: park}})
+        .then(checkins => {
+            let checkInfo = checkins[0].dataValues;
+            console.log(checkins);
+            console.log("USER ID:",checkInfo.userId);
+        });
+    });
 };

@@ -27,7 +27,8 @@ const routes: Routes = [
     {
       path: 'followers',
       component: FollowersComponent,
-
+    },
+    {
       path: 'connections',
       component: ConnectionsComponent,
       canActivate: [AuthGuardService]

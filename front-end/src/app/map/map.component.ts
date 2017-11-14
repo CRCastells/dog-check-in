@@ -22,6 +22,7 @@ export class MapComponent implements OnInit {
 	searchControl: FormControl;
 	zoom: number;
   markers: { lat: number, lng: number, name: string, address: string, rating: number}[] = [];
+  checkIns: any;
 
 
  @ViewChild("search")
@@ -111,8 +112,14 @@ export class MapComponent implements OnInit {
     this.markers = markers;
   }
 
+  getCheckIns(marker){
+    this.mapService.getCheckIns(marker).subscribe(res => {
+      console.log(res.json());
+    });
+  }
+
   checkIn(marker){
-    this.mapService.getInfo(marker).subscribe(res => {
+    this.mapService.checkIn(marker).subscribe(res => {
       console.log(res.json());
     });
   }

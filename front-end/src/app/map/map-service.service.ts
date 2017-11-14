@@ -14,9 +14,14 @@ export class MapService {
   	private http: Http
   ) { }
 
-  getInfo(marker) {
+  checkIn(marker) {
   	console.log("Current Location: ", marker, "Current User: ", this.user);
     let checkin = {marker, user: this.user}
-    return this.http.post(`/api/checkins`,checkin);
+    return this.http.post(`/api/checkins/`, marker);
+  }
+
+  getCheckIns(marker) {
+    console.log("Current Location: ", marker, "Current User: ", this.user);
+    return this.http.get(`/api/checkins/${marker.name}`, marker.name);
   }
 }
