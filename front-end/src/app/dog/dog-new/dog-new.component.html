@@ -1,15 +1,22 @@
-<form (ngSubmit)='saveDog(newDog)' enctype="multipart/form-data">
+<form #dogNewForm="ngForm" (ngSubmit)='saveDog(newDog)' novalidate>
+	<p>Is "dogNewForm" valid? {{dogNewForm.valid}}</p>
 	<label for="name">Name: </label>
-	<input name="name" [(ngModel)]='newDog.name'>
+	<input name="name" [(ngModel)]="newDog.name" required>
+	<show-errors [control]="name" ></show-errors>
 	<label for="breed">Breed: </label>
-	<input name="breed" [(ngModel)]='newDog.breed'>
+	<input name="breed" [(ngModel)]='newDog.breed' required>
+	<show-errors [control]="breed"></show-errors>
 	<label for="fixed">Fixed: </label>
 	<input type='checkbox' name="fixed" [(ngModel)]='newDog.fixed'>
+	<show-errors [control]="checkbox"></show-errors>
 	<label for="description">Description: </label>
-	<input name="description" [(ngModel)]='newDog.description'>
+	<input name="description" [(ngModel)]='newDog.description' required>
+	<show-errors [control]="description" ></show-errors>
 	<label for="age">Age: </label>
-	<input type='number' name="age" [(ngModel)]='newDog.age'>
+	<input type='number' name="age" [(ngModel)]='newDog.age' required>
+	<show-errors [control]="number"></show-errors>
 	<label for="image">Image URL: </label>
-	<input name="image" [(ngModel)]='newDog.image'>
+	<input name="image" [(ngModel)]='newDog.image' required pattern="(https?:\/\/.*\.(png|jpg))">
 	<input type="submit" value='SAVE'>
+	<pre>{{dogNewForm.value | json}}</pre>
 </form>

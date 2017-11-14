@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from '../../services/api-service.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-dog-new',
@@ -8,6 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./dog-new.component.css']
 })
 export class DogNewComponent implements OnInit {
+
+  @ViewChild('newDogForm')
+  newDogForm: NgForm;
 
 	newDog = {
     name: '',
@@ -20,11 +24,16 @@ export class DogNewComponent implements OnInit {
 
   constructor(
   	private apiService : ApiService,
-    private router: Router
+    private router: Router,
+    private ngForm: NgForm
   ) { }
 
   ngOnInit() {
     console.log(JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]]));
+  }
+
+  register(newDogForm: NgForm) {
+    console.log(newDogForm);
   }
 
   saveDog(newDog){
