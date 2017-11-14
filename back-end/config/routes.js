@@ -35,7 +35,7 @@ router.get('/api/users/:id', usersController.destroy);
 router.get('/api/dogs', dogsController.index);
 
 // create
-router.post('/api/dogs', upload.single('dog'), dogsController.create);
+router.post('/api/dogs', dogsController.create);
 
 // show
 router.get('/api/dogs/:id', dogsController.show);

@@ -13,7 +13,7 @@ export class DogIndexComponent implements OnInit {
 		fixed: true,
 		description: "The goodest of boys",
 		age: 2,
-		picture: ''
+		image: ''
 	}]
 
   constructor() { }

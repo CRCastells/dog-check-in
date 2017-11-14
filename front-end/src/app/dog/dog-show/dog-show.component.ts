@@ -14,7 +14,7 @@ export class DogShowComponent implements OnInit {
 		fixed: true,
 		description: 'the goodest of boys',
 		age: 2,
-		picture: 'http://truecompanionstraining.com/wp-content/uploads/good-dog-school.jpg'
+		image: 'http://truecompanionstraining.com/wp-content/uploads/good-dog-school.jpg'
 	};
 
   constructor() { }
