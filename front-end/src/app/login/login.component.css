@@ -1,28 +1,40 @@
 #containery {
-	background: grey;	
+	background-image: url('../../assets/backgroundFR.png');
+	background-size: cover;	
 	height: 100vh;
 
 }
-#back-img {
-	height: 100%;
-	width: 100%;
-	z-index: -1;
-	filter: brightness(1.5);
+
+
+h1 {
+	text-align: center;
+	z-index: 1;
+	background: transparent;
+	color: white;
+	padding-top: 40px;
+	font-family: 'Sigmar One';
+}
+
+@mixin add-gutters($size) {
+    margin-right: -$size;
+    margin-left: -$size;
+}
+
+.row {
+	@include add-gutter-size(50px);
 }
 
 #login {
-	position: absolute;
-	background: #536878;
+	background: black;
 	border-radius: 10px;
 	color: white;
-	height: 70vh;
-	width: 50vh;
-	left: 5vh;
-	top: 10vh;
-	margin: 25px;
+	height: 20vh;
+	width: 100%;
+	margin: 30px 30px 30px 40px;
 	font-family: 'Sigmar One';
 	z-index: 1;
-	opacity: 0.5;
+	opacity: 0.3;
+	transition: all .5s ease-out;
 }
 
 button {
@@ -30,19 +42,17 @@ button {
 }
 
 #description {
-	position: absolute;
-	background: #536878;
+	background: black;
 	border-radius: 10px;
 	font-family: 'Sigmar One';
-	top: 10vh;
-	height: 70vh;
-	width: 50vh;
-	left: 90vh;
-	margin: 25px;
+	height: 100%;
+	width: 100%;
 	z-index: 1;
+	margin: 30px 30px 30px 80px;
 	color: white;
 	border: none;
-	opacity: 0.4;
+	opacity: 0.3;
+	transition: all .5s ease-out;
 }
 
 p {
@@ -51,14 +61,14 @@ p {
 
 #login:hover {
 	transition: all .5s ease-in-out;
-	opacity: 0.85;
+	opacity: 0.75;
 	transform: scale(1.2);
 
 }
 
 #description:hover {
 	transition: all .5s ease-in-out;
-	opacity: 0.85;
+	opacity: 0.75;
 	transform: scale(1.2);
 
 }
