@@ -9,6 +9,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { DogComponent } from './dog/dog.component';
 import { FollowersComponent } from './followers/followers.component';
 import { ConnectionsComponent } from './connections/connections.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
     {
@@ -32,6 +33,11 @@ const routes: Routes = [
     {
       path: 'connections',
       component: ConnectionsComponent,
+      canActivate: [AuthGuardService]
+    },
+    {
+      path: 'about',
+      component: AboutComponent,
       canActivate: [AuthGuardService]
     }
 ]

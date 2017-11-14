@@ -39,6 +39,7 @@ import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserShowComponent } from './user/user-show/user-show.component';
 import { UserRoutingModule } from './user/user-routing.module';
 import { ConnectionsComponent } from './connections/connections.component';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -65,7 +66,8 @@ import { ConnectionsComponent } from './connections/connections.component';
     UserEditComponent,
     UserShowComponent,
     ConnectionsComponent,
-    ProfileComponent
+    ProfileComponent,
+    AboutComponent
   ],
   imports: [
     AgmCoreModule.forRoot({
