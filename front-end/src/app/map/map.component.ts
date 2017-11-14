@@ -114,7 +114,7 @@ export class MapComponent implements OnInit {
 
   getCheckIns(marker){
     this.mapService.getCheckIns(marker).subscribe(res => {
-      console.log(res.json());
+      this.checkIns = res.json();
     });
   }
 

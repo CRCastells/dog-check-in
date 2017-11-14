@@ -6,6 +6,7 @@ const User = db.models.User;
 module.exports.create = (req, res) => {
     let park = req.body.marker;
     let firebase_id = req.body.user.uid;
+    console.log("park:",park,"firebase:",firebase_id);
     Park.findOrCreate({ where: park })
         .spread((parkdata, created) => {
             console.log(parkdata.dataValues);
@@ -21,14 +22,11 @@ module.exports.create = (req, res) => {
             			console.log(response);
             		});
             })
-            .catch(function(err) {
-                // // print the error details
-                // console.log(err);
-            });
         });
 };
 
 module.exports.show = (req, res) => {
+    let checkinArray = [];
     console.log(req.params.name);
     Park.findAll({where: {name: req.params.name}})
     .then(parks => {
@@ -36,9 +34,20 @@ module.exports.show = (req, res) => {
         console.log(park);
         Checkin.findAll({where: {parkId: park}})
         .then(checkins => {
-            let checkInfo = checkins[0].dataValues;
-            console.log(checkins);
-            console.log("USER ID:",checkInfo.userId);
+            checkin = checkins;
+            checkin.forEach(function(data) {
+                // console.log(data.dataValues.userId);
+                User.findAll({where: {id: data.dataValues.userId}})
+                .then(response => {
+                    // console.log(response[0].dataValues.name);
+                    checkinArray.push(response[0].dataValues);
+                    // console.log(checkinArray);
+                });
+            });
+            setTimeout(function(){
+                res.json(checkinArray);
+                console.log(checkinArray);
+            }, 500);
         });
     });
 };
