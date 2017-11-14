@@ -4,33 +4,51 @@ const Park = db.models.Park;
 const User = db.models.User;
 
 module.exports.create = (req, res) => {
-    console.log('PARK INFO:', req.body.marker);
     let park = req.body.marker;
     let firebase_id = req.body.user.uid;
-    console.log('USER FIREBASEID:', req.body.user.uid);
+    // console.log("Request", req.body);
+    // console.log("park:",park,"firebase:",firebase_id);
     Park.findOrCreate({ where: park })
         .spread((parkdata, created) => {
-            console.log(parkdata.dataValues);
+            // console.log(parkdata.dataValues);
             User.findOne({
                 where: {
                     firebase_id
                 }
             })
             .then(function(userdata) {
-            	console.log(userdata);
-            	Checkin.create({parkId:parkdata.dataValues.id,userId:userdata.dataValues.id})
+            	// console.log("then",userdata.dataValues);
+            	Checkin.upsert({parkId:parkdata.dataValues.id,userId:userdata.dataValues.id})
             		.then(response => {
-            			console.log(response);
+            			// console.log(response);
             		});
+            })
+        });
+};
+
+module.exports.show = (req, res) => {
+    let park = req.body.marker;
+    let checkinArray = [];
+    // console.log("park:", park);
+    Park.findOrCreate({where: park })
+        .spread((parkdata, created) => {
+            // console.log(parkdata.dataValues)
+            Checkin.findAll({where: {parkId: parkdata.dataValues.id}})
+            .then(checkins => {
+                checkin = checkins;
+                checkin.forEach(function(data) {
+                    // console.log(data.dataValues.userId);
+                    User.findAll({where: {id: data.dataValues.userId}})
+                    .then(response => {
+                        // console.log(response[0].dataValues.name);
+                        checkinArray.push(response[0].dataValues);
+                        // console.log(checkinArray);
+                    });
+                });
+                setTimeout(function(){
+                    res.json(checkinArray);
+                    // console.log(checkinArray);
+                }, 500);
             });
         });
-
-
-    //check to see if park is in DB
-    //if yes
-    //create new checking with userid and parkid
-    //no
-    //create new park in db
-    //find user based off of firebaseID
-    //create new checking with userid and parkid
 };

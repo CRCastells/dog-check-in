@@ -16,12 +16,13 @@ import { MapService } from './map-service.service';
 })
 export class MapComponent implements OnInit {
 
-  user: object = JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]]);
+  user: object;
 	latitude: number;
 	longitude: number;
 	searchControl: FormControl;
 	zoom: number;
   markers: { lat: number, lng: number, name: string, address: string, rating: number}[] = [];
+  checkIns: any;
 
 
  @ViewChild("search")
@@ -111,9 +112,15 @@ export class MapComponent implements OnInit {
     this.markers = markers;
   }
 
+  getCheckIns(marker){
+    this.mapService.getCheckIns(marker).subscribe(res => {
+      this.checkIns = res.json();
+    });
+  }
+
   checkIn(marker){
-    this.mapService.getInfo(marker).subscribe(res => {
-      console.log(res.json());
+    this.mapService.checkIn(marker).subscribe(res => {
+      // console.log(res.json());
     });
   }
 
