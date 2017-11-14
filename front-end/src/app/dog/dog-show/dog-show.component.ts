@@ -9,13 +9,13 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 export class DogShowComponent implements OnInit {
 	
 	oneDog = {
-		name :'Fido',
-		breed:'Shiba',
+		name: 'fido',
+		breed: 'shiba',
 		fixed: true,
-		description: "The goodest of boys",
+		description: 'the goodest of boys',
 		age: 2,
-		picture: ''
-	}
+		image: 'http://truecompanionstraining.com/wp-content/uploads/good-dog-school.jpg'
+	};
 
   constructor() { }
 

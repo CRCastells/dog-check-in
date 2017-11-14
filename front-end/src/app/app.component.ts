@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
 	test: any;
   
-  constructor(private router: Router){}
+  constructor(public router: Router){}
 
   ngOnInit() {
   	this.test = 'hello from the appComponent!!!';
