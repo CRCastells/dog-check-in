@@ -4,7 +4,7 @@
     <h3>{{oneUser.email}}</h3>
     <img class="card-img-top" src="{{oneUser.image}}">
 </div>
-
+	<a routerLink="../dogs/new"><button>Add Dog</button></a>
 	<div class="card-text" *ngFor="let dog of oneUser.dogs">
 		  		<h4>{{dog.name}}</h4>
 		  		<a routerLink="../dogs/{{dog.id}}"><img src="{{dog.image}}" style="width: 20rem;"></a> 
