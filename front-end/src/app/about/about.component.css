@@ -8,11 +8,16 @@ h1 {
 }
 
 a {
+	text-align: center;
 	color: blue;
 }
 
 p {
 	font-family: sans-serif;
+}
+
+img {
+	border-radius: 10px;
 }
 
 #jared {
@@ -31,16 +36,9 @@ p {
 	color: black;
 }
 
-#jared-img {
+#jared-img, #cam-img, #jeff-img, #quinn-img {
 	margin-left: 20px;
-	height: 40vh;
-	width: 15%;
-	border-radius: 10px;
-}
-
-
-#cam-img, #jeff-img, #quinn-img {
-	margin-left: 20px;
+	filter: brightness(.8);
 	height: 40vh;
 	width: 30%;
 	border-radius: 10px;
