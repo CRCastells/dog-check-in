@@ -4,13 +4,14 @@ agm-map {
 }
 
 
-body {
-	background: -webkit-linear-gradient(left, #C0C0C0, black 50%, #C0C0C0);
+#page {
+	background: #abbd9a;
 }
 
 .form-group {
+	justify-content: left;
 	margin: 15px;
-	border: 1px solid #C0C0C0;
+	border: 2px solid #ced2ba;
 	border-radius: 5px;
 }
 
