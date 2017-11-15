@@ -15,7 +15,8 @@ function index(req, res) {
     firebase_id: {
       [Op.not]: [req.query.q]
     }
-  }
+  },
+  include: Dog
 }).then(function(users) {
     res.json(users);
   });
