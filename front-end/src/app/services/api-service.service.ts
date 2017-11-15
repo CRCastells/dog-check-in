@@ -5,6 +5,7 @@ import { Http } from '@angular/http';
 export class ApiService {
 
 	baseUrl: string;
+  user = JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]]);
 
   constructor(private http: Http) { 
     if(isDevMode()) {
@@ -15,8 +16,8 @@ export class ApiService {
   }
 
   ///USERS
-  getAllUsers(){
-    return this.http.get(`${this.baseUrl}/users/`);
+  getAllUsers(userId){
+    return this.http.get(`${this.baseUrl}/users/?q=${userId}`);
   }
 
   getOneUser(firebaseId){
