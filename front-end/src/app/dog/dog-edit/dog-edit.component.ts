@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../../services/api-service.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-dog-edit',
@@ -15,8 +16,12 @@ export class DogEditComponent implements OnInit {
 		fixed: true,
 		description: 'the goodest of boys',
 		age: 2,
-		image: 'http://truecompanionstraining.com/wp-content/uploads/good-dog-school.jpg'
+		image: 'http://truecompanionstraining.com/wp-content/uploads/good-dog-school.jpg',
+    id: ''
 	};
+
+  @ViewChild('newDogForm')
+  dogUpdateForm: NgForm;
 
   constructor(
     private route : ActivatedRoute,
@@ -31,8 +36,16 @@ export class DogEditComponent implements OnInit {
       });
     });
   }
-  updateDog(updatedDog) {
-    this.apiService.updateDog(updatedDog).subscribe(res => {
+  updateDog(dogUpdateForm : NgForm) {
+    let sendDog = {id:this.updatedDog.id}
+    for (let prop in dogUpdateForm.form.value){
+      if (dogUpdateForm.form.value[prop]) {
+        console.log(prop);
+        sendDog[prop] = dogUpdateForm.form.value[prop];
+      }
+    }
+    console.log(sendDog);
+    this.apiService.updateDog(sendDog).subscribe(res => {
       this.router.navigateByUrl(`/dogs/${res.json().id}`)
     })
   }

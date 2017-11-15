@@ -11,16 +11,17 @@ import { NgForm } from '@angular/forms';
 export class DogNewComponent implements OnInit {
 
   @ViewChild('newDogForm')
-  newDogForm: NgForm;
+  dogNewForm: NgForm;
 
-	newDog = {
-    name: '',
-    breed: '',
-    fixed: true,
-    description: '',
-    age: 0,
-    image: ''
-  };
+  	newDog = {
+      name: '',
+      breed: '',
+      fixed: true,
+      description: '',
+      age: 0,
+      image: '',
+      userId: 0
+    };
 
   constructor(
   	private apiService : ApiService,
@@ -29,19 +30,16 @@ export class DogNewComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]]));
-  }
 
-  register(newDogForm: NgForm) {
-    console.log(newDogForm);
   }
-
-  saveDog(newDog){
+  
+  saveDog(dogNewForm : NgForm){
+    this.newDog = dogNewForm.form.value;
     this.apiService.getOneUser(JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]]).uid)
     .subscribe(res => {
       let user = res.json();
-      newDog.userId = user.id;
-      this.apiService.createDog(newDog)
+      this.newDog.userId = user.id;
+      this.apiService.createDog(this.newDog)
       .subscribe(res => {
         this.router.navigateByUrl('profile');
       });

@@ -38,7 +38,7 @@ function update(req, res) {
 	});
 }
 
-function destroy(req, res) {
+module.exports.destroy = (req, res)  => {
 	Park.findById(req.params.id)
 	.then(function(park){
 		if(!park) res.send("park not found");
@@ -47,10 +47,9 @@ function destroy(req, res) {
 	.then(function(){
 		res.send("park deleted");
 	});
-}
+};
 
 module.exports.index = index;
 module.exports.show = show;
 module.exports.create = create;
 module.exports.update = update;
-module.exports.destroy = destroy;

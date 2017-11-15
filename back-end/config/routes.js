@@ -24,10 +24,10 @@ router.post('/api/users', usersController.create);
 router.get('/api/users/:id', usersController.show);
 
 // update
-router.put('/api/users/:id', usersController.update);
+router.patch('/api/users/:id', usersController.update);
 
 // destroy
-router.get('/api/users/:id', usersController.destroy);
+router.delete('/api/users/:id', usersController.destroy);
 
 
 
@@ -45,7 +45,7 @@ router.post('/api/dogs', dogsController.create);
 router.get('/api/dogs/:id', dogsController.show);
 
 // update
-router.put('/api/dogs/:id', dogsController.update);
+router.patch('/api/dogs/:id', dogsController.update);
 
 // destroy
 router.delete('/api/dogs/:id', dogsController.destroy);

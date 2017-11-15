@@ -11,7 +11,7 @@ export class ShowErrorsComponent implements OnInit {
 
 	private static readonly errorMessages = {
 		'required': () => 'This field is required',
-		'pattern': (params) => 'The required pattern is: ' + params.requiredPattern
+		'pattern': (params) => 'You must enter a valid hosted web url for this image. Ex: "http://<domain>/image.jpg". Only .png or .jpg formats will be accepted.'
 	};
 
 	@Input()
