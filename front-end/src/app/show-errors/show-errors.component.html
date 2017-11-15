@@ -1,0 +1,4 @@
+<span *ngIf="shouldShowErrors()">
+	<br>
+	<p class="alert alert-danger errorMessage" *ngFor="let error of listOfErrors()">{{error}}</p>
+</span>
