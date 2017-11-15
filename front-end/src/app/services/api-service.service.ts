@@ -46,7 +46,7 @@ export class ApiService {
   }
 
   updateDog(updatedDog){
-  	return this.http.put(`${this.baseUrl}/dogs/${updatedDog.id}`, updatedDog);
+  	return this.http.patch(`${this.baseUrl}/dogs/${updatedDog.id}`, updatedDog);
   }
 
   deleteDog(deletedDog){

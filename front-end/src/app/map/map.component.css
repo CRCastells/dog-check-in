@@ -16,9 +16,8 @@ agm-map {
 }
 
 a, a:hover, a:focus {
-	color: inherit;
+	color: white;
 	text-decoration: none;
-
 }
 
 .name {

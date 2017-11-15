@@ -1,15 +1,22 @@
-<form (ngSubmit)='updateDog(updatedDog)'>
+<form #dogUpdateForm="ngForm" (ngSubmit)='updateDog(dogUpdateForm)' novalidate>
 	<label for="name">Name: </label>
-	<input name="name" [(ngModel)]='updatedDog.name'>
+	<input name="name" #name="ngModel" ngModel [value]="updatedDog.name" required>
+	<show-errors [control]="name" ></show-errors>
 	<label for="breed">Breed: </label>
-	<input name="breed" [(ngModel)]='updatedDog.breed'>
+	<input name="breed" #breed="ngModel" ngModel [value]="updatedDog.breed" required>
+	<show-errors [control]="breed"></show-errors>
 	<label for="fixed">Fixed: </label>
-	<input type='checkbox' name="fixed" [(ngModel)]='updatedDog.fixed'>
+	<input type='checkbox' name="fixed" #fixed="ngModel" ngModel [value]="updatedDog.fixed" >
+	<show-errors [control]="fixed"></show-errors>
 	<label for="description">Description: </label>
-	<input name="description" [(ngModel)]='updatedDog.description'>
+	<input name="description" #description="ngModel" ngModel [value]="updatedDog.description" required>
+	<show-errors [control]="description" ></show-errors>
 	<label for="age">Age: </label>
-	<input type='number' name="age" [(ngModel)]='updatedDog.age'>
+	<input type='number' name="age" #age="ngModel" ngModel [value]="updatedDog.age" required>
+	<show-errors [control]="age"></show-errors>
 	<label for="image">Image URL: </label>
-	<input name="image" [(ngModel)]='updatedDog.image'>
-	<input type="submit" value='Update'>
+	<input name="image" #image="ngModel" ngModel [value]="updatedDog.image" required pattern="(https?:\/\/.*\.(png|jpg))">
+	<show-errors [control]='image'></show-errors>
+	<input type="submit" value='SAVE' class="btn btn-success">
+	<pre>{{dogUpdateForm.form.value | json}}</pre>
 </form>

@@ -1,0 +1,17 @@
+.card {
+	margin: 0 auto; 
+    float: none; 
+    margin-bottom: 10px; 
+}
+
+.card-text {
+	color: black;
+}
+
+.good {
+	color: black;
+}
+
+.bad {
+	color: black;
+}

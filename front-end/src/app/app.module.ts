@@ -31,6 +31,7 @@ import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { MapService } from './map/map-service.service';
 import { ApiService } from './services/api-service.service';
+// import { ShowErrorsComponent } from './show-errors/show-errors.component';
 
 @NgModule({
   declarations: [
