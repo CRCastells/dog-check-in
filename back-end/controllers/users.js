@@ -1,12 +1,22 @@
 const db = require('../models');
 const User = db.models.User;
 const Dog = db.models.Dog;
+var Sequelize = require('sequelize');
+const Op = Sequelize.Op;
+
 // const Connection = db.models.Connection;
 // const Checkin = db.models.Checkin;
 
 
 function index(req, res) {
-  User.findAll({ include: Dog }).then(function(users) {
+  console.log(req.query);
+  User.findAll({
+  where: {
+    firebase_id: {
+      [Op.not]: [req.query.q]
+    }
+  }
+}).then(function(users) {
     res.json(users);
   });
 }

@@ -2,6 +2,7 @@ const db = require('../models');
 const Connection = db.models.Connection;
 
 function index(req, res) {
+	console.log("index hit");
 	Connection.findAll().then(function(connections) {
 		res.json(connections);
 	});
