@@ -12,14 +12,15 @@ import { AppComponent } from '../app.component';
 export class ConnectionsComponent implements OnInit {
 
 	connections: any;
-  user = JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]]);
+  user: any;
 
   constructor(
   	private apiService: ApiService
   ) { }
 
   ngOnInit() {
-  	this.apiService.getAllUsers(this.user.uid).subscribe( res => {
+      this.user = JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]]);
+      this.apiService.getAllUsers(this.user.uid).subscribe( res => {
       this.connections = res.json();
       console.log(this.user);
       // console.log(this.connections);
