@@ -6,215 +6,7 @@ header {
 	background-image: url('../../../assets/dog-park2.png');
 	background-position: center;
 	background-size: cover;
-	height: 175px;
-}
-
-#welcome {
-	filter: none;
-}
-
-#img-container {
-	height: 200px;
-	width: 100%;
-	background: #C0C0C0;
-	margin-right: 5px;
-	border-radius: 10px;
-}
-
-@media only screen and (max-width: 775px) {
-	#img-container {
-		display: none;
-	}
-
-	#head-img-2, #head-img-3 {
-		display: none;
-	}
-
-	#head-img-5, #head-img-6 {
-		display: none;
-	}
-
-	#head-img-1, #head-img-4 {
-		display: none;
-	}
-	.nav {
-		display: inline;
-		margin: 20px;
-		margin-bottom: 25px;
-		padding: 5px;
-	}
-	#search-bar {
-		margin-bottom: 20px;
-	}
-}
-
-@keyframes left-image3FadeInOut {
-0% {
-    opacity:1;
-}
-45% {
-	opacity:1;
-}
-55% {
-	opacity:0;
-}
-100% {
-	opacity:0;
-}
-}
-
-#img-left img.top {
-	animation-name: left-image3FadeInOut;
-	animation-timing-function: ease-in-out;
-	animation-iteration-count: infinite;
-	animation-duration: 8s;
-	animation-direction: alternate;
-}
-
-@keyframes middle-image3FadeInOut {
-0% {
-    opacity:1;
-}
-45% {
-	opacity:1;
-}
-55% {
-	opacity:0;
-}
-100% {
-	opacity:0;
-}
-}
-
-#img-middle img.top {
-	animation-name: middle-image3FadeInOut;
-	animation-timing-function: ease-in-out;
-	animation-iteration-count: infinite;
-	animation-duration: 9s;
-	animation-direction: alternate;
-}
-
-@keyframes right-image3FadeInOut {
-0% {
-    opacity:1;
-}
-45% {
-	opacity:1;
-}
-55% {
-	opacity:0;
-}
-100% {
-	opacity:0;
-}
-}
-
-#img-right img.top {
-	animation-name: right-image3FadeInOut;
-	animation-timing-function: ease-in-out;
-	animation-iteration-count: infinite;
-	animation-duration: 7s;
-	animation-direction: alternate;
-}
-
-@keyframes far-image3FadeInOut {
-0% {
-    opacity:1;
-}
-45% {
-	opacity:1;
-}
-55% {
-	opacity:0;
-}
-100% {
-	opacity:0;
-}
-}
-
-#img-far img.top {
-	animation-name: far-image3FadeInOut;
-	animation-timing-function: ease-in-out;
-	animation-iteration-count: infinite;
-	animation-duration: 8s;
-	animation-direction: alternate;
-}
-
-.row.no-gutter {
-  margin-left: 0;
-  margin-right: 0;
-}
-.row.no-gutter [class*='col-']:not(:first-child),
-.row.no-gutter [class*='col-']:not(:last-child) {
-  padding-right: 0;
-  padding-left: 0;
-}
-
-#head-img-1 {
-	position: absolute;
-	margin-left: 8px;
-	height: 200px;
-	width: 100%;
-	margin-top: 5px;
-	border-radius: 5px;
-}
-
-
-#head-img-4 {
-	margin-left: 8px;
-	height: 200px;
-	width: 100%;
-	margin-top: 5px;
-	border-radius: 5px;
-}
-
-#head-img-2 {
-	position: absolute;
-	height: 200px;
-	width: 100%;
-	margin-top: 5px;
-	border-radius: 5px;
-}
-
-#head-img-3 {
-	height: 200px;
-	width: 100%;
-	margin-top: 5px;
-	border-radius: 5px;
-}
-
-#head-img-5 {
-	position: absolute;
-	height: 200px;
-	width: 100%;
-	margin-top: 5px;
-	border-radius: 5px;
-}
-
-#head-img-6 {
-	height: 200px;
-	width: 100%;
-	margin-top: 5px;
-	border-radius: 5px;
-}
-
-#head-img-7 {
-	position: absolute;
-	height: 200px;
-	width: 100%;
-	margin-top: 5px;
-	border-radius: 5px;
-	flex-grow: 2;
-	margin-right: 10px;
-}
-
-#head-img-8 {
-	height: 200px;
-	width: 100%;
-	margin-top: 5px;
-	border-radius: 5px;
-	flex-grow: 2;
-	margin-right: 10px;
+	height: 100%;
 }
 
 #nav-bar {
@@ -233,37 +25,9 @@ h3 {
 	filter: brightness(1.5);
 }
 
-#search-bar {
-	margin-top: 40px;
-	margin-right: 100px;
-}
-
-#search {
-	font-family: 'Sigmar One';
-	border: 1px solid black;
-	border-radius: 5px;
-	height: 42px;
-	width: 60%;
-}
-
-#button {
-	font-family: 'Sigmar One';
-	color: #536878;
-	border: 1px solid #536878;
-	margin-top: -2px;
-	width: 95px;
-	height: 38px;
-	box-shadow: 1px 1px 1px black;
-	
-}
-
-#button:hover {
-	border: 1px solid white;
-}
-
-#routerLinks {
+#router {
 	margin-top: 15px;
-	margin-right: 75px;
+	margin-left: 200px;
 	margin-bottom: 10px;
 	font-size: 18px;
 	font-family: 'Sigmar One';
@@ -272,14 +36,46 @@ h3 {
 
 .nav {
 	filter: brightness(1.3);
+	margin-left: 200px;
 	text-align: right;
 	color: white;
-	transition: all .3s ease-out;
+	transition: all .4s ease-out;
 }
 
 #link0:hover, #link1:hover, #link2:hover, #link3:hover, #link4:hover {
 	color: white;
 	text-decoration: underline;
-	transform: scale(1.2);
-	transition: all .3s ease-in-out;
+	transform: scale(1.1);
+	transition: all .4s ease-in-out;
+}
+
+
+@media only screen and (max-width: 775px) {
+	.nav {
+		display: inline;
+		margin: 10px;
+		margin-left: 10px;
+		margin-bottom: 25px;
+		padding: 5px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	header {
+		background-image: url('../../../assets/dog-social.jpg');
+		color: black;
+	}
+
+	#router {
+		margin-left: 0px;
+	}
+
+	.nav {
+		color: black;
+		display: inline;
+		margin-top: 10px;
+		margin-left: 10px; 
+		margin-bottom: 25px;
+		padding: 5px;
+	}
 }

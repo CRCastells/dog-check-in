@@ -1,44 +1,16 @@
-
 <header>
-	<!--<div id="img-container" class="row no-gutter">
-		<div id="img-left" class="col-md justify-column-center">
-			<img class="top" id="head-img-1" src="http://pawhills.com/wordpress/wp-content/uploads/2015/05/dogsuitcase.jpg">
-			<img class="bottom" id="head-img-4" src="https://www.thatmutt.com/web/wp-content/uploads/2017/01/dog-socialization-1.jpg">
-		</div>
-		<div id="img-middle" class="col-md justify-column-center">
-			<img class="top" id="head-img-2" src="https://animalwellnessmagazine.com/wp-content/uploads/Three-puppies-red-collars-in-grass_dreamstime_xs_3061052.jpg">
-			<img class="bottom" id="head-img-3" src="http://carolinabiscuit.com/wp-content/uploads/2014/12/dogs-play-ball.jpg">
-		</div>
-		<div id="img-right" class="col-md justify-column-center">
-			<img class="top" id="head-img-5" src="https://greaterthanthedog.files.wordpress.com/2017/07/depositphotos_49380373_l-2015.jpg?w=635&h=423">
-			<img class="bottom" id="head-img-6" src="https://www.aspcapetinsurance.com/media/2466/how-to-socialize-your-dog.jpg">
-		</div>
-		<div id="img-far" class="col-md justify-column-center">
-			<img class="top" id="head-img-7" src="https://flexpet.com/wp-content/uploads/2014/12/socialize_your_adult_dog-597750-edited.jpg">
-			<img class="bottom" id="head-img-8" src="http://www.leapsnhounds.com/wp-content/uploads/2016/06/border-collie-672696_1920.jpg">
-		</div>	
-	</div>	-->
-
 	<div id="nav-bar" class="row">
-		<!-- <img id="background-image" src="https://www.freewebheaders.com/wordpress/wp-content/gallery/forests-fields/colorful-trees-header-9034-1024x300.jpg"> -->
-
-			<div class="col-md justify-column-center">	
-				<h3>Welcome, {{user.displayName}}</h3>
-			</div>
-			<!--<div id="search-bar" class="col-md justify-column-center">
-
-			</div>	
-			<div id="search-bar" class="col-md justify-column-center">
-				<input id="search" type="search" placeholder="search users">
-				<button id="button" class="btn">Search</button>
-			</div>	-->
-			<div class="col-mdm justify-column-center" id="routerLinks">
-				<a id="link0" class="nav" routerLink="/map">Map</a> 
-				<a id="link1" class="nav" routerLink="/profile">Profile</a>
-				<a id="link2" class="nav" routerLink="/connections">Connections</a>
-				<a id=link4 class="nav" routerLink="/about">About Us</a>
-				<a id="link3" class="nav" routerLink="" (click)='logout()'>Logout</a>
-			</div>
+		<div class="col-md justify-column-center">	
+			<h3>Welcome, {{user.displayName}}</h3>
+		</div>
+			
+		<div align="right" class="col-md justify-column-right" id="router">
+			<a id="link0" class="nav" routerLink="/map">Map</a> 
+			<a id="link1" class="nav" routerLink="/profile">Profile</a>
+			<a id="link2" class="nav" routerLink="/connections">Connections</a>
+			<a id=link4 class="nav" routerLink="/about">About Us</a>
+			<a id="link3" class="nav" routerLink="" (click)='logout()'>Logout</a>
+		</div>
 	</div>
 </header>	
 
