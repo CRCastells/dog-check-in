@@ -16,87 +16,77 @@ Dog Check-In is a user-friendly social media site that connects dog owners and a
 ### Database ERD
 ![alt text](front-end/src/assets/DBerd.png "Db ERD")
 
-<!---<div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://www.lucidchart.com/documents/embeddedchart/6c00b2b9-f19e-4591-ba9c-b796d2a58991" id="fteOhHkW-v28"></iframe></div>-->
-
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
+### Get the code
 
-What things you need to install the software and how to install them
+Either clone this repository or fork it on Guthub and clone your fork.
 
-```
-Give examples
-```
+https://github.com/CRCastells/dog-check-in.git
 
-### Installing
+cd dog-check-in
 
-A step by step series of examples that tell you have to get a development env running
 
-Say what the step will be
+### Server Install
 
-```
-Give the example
-```
-
-And repeat
+Our backend application server is a NodeJS application that relies upon some 3rd Party npm packages. You need to install these:
 
 ```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+cd back-end
+npm install
+cd ..
 
 ```
-Give an example
-```
 
-### And coding style tests
+### Client App
 
-Explain what these tests test and why
+Our front end application is running Angular5 along with several other dependencies.  You need to install these.
 
 ```
-Give an example
+cd front-end
+npm install
+cd ..
+
 ```
 
-## Deployment
+## Deployment Requirements
 
-Add additional notes about how to deploy this on a live system
+### PostgreSQL Database
+
+You need to have PostgreSQL installed on your machine.
+You will also need to create a database.
+Update your .env file to include your local database connection path.  Otherwise you can update the database url directly in the index.js file located on the back-end/models directory.
+
+### Firebase
+
+Create a Firebase app. Visit firebase.google.com and click Sign In. Then click Go to Console.
+Click Add A Project.
+Once you're in your dashboard, click Add Firebase to your web app and copy the configuration settings.
+Paste this into the environments.ts file 
+
+### Google Maps
+
+Create a Google Maps API Key by going to https://developers.google.com/maps/ and generating a new key.
+Add this key to the .env file.
 
 ## Built With
 
 * [Angular 2+](https://angular.io/) 
 * [Nodejs](https://nodejs.org/en/) 
-* [Sequelize](http://docs.sequelizejs.com/) 
+* [Sequelize](http://docs.sequelizejs.com/)
+* [PostgrSQL Database](https://www.postgresql.org/docs/)
+* [Firebase Google Authentication](https://firebase.google.com/)
+* [Google Maps API](https://developers.google.com/maps/)
 
-
-
-## Authors
+## Developed by:
 
 * **Jared Pleva** 
 * **Cameron Castells** 
 * **Jeffrey Engleberg** 
 * **Quinn O'Neill** 
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
 
