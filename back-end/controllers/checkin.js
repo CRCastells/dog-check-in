@@ -2,6 +2,8 @@ const db = require('../models');
 const Checkin = db.models.Checkin;
 const Park = db.models.Park;
 const User = db.models.User;
+var Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 module.exports.create = (req, res) => {
     let park = req.body.marker;
@@ -27,18 +29,28 @@ module.exports.create = (req, res) => {
 };
 
 module.exports.show = (req, res) => {
+    console.log(new Date());
     let park = req.body.marker;
     let checkinArray = [];
     // console.log("park:", park);
     Park.findOrCreate({where: park })
         .spread((parkdata, created) => {
             // console.log(parkdata.dataValues)
-            Checkin.findAll({where: {parkId: parkdata.dataValues.id}})
+            Checkin.findAll({
+                where: {
+                    parkId: parkdata.dataValues.id,
+                    updatedAt: { [Op.gt]: new Date(new Date() - 1000 * 60 * 60) }
+                }
+            })
             .then(checkins => {
                 checkin = checkins;
                 checkin.forEach(function(data) {
                     // console.log(data.dataValues.userId);
-                    User.findAll({where: {id: data.dataValues.userId}})
+                    User.findAll({
+                        where: {
+                            id: data.dataValues.userId
+                        }
+                    })
                     .then(response => {
                         // console.log(response[0].dataValues.name);
                         checkinArray.push(response[0].dataValues);
