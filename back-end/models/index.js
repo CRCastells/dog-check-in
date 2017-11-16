@@ -26,9 +26,11 @@ User.hasMany(Dog);
 // Checkin.belongsTo(Park);
 // Park.hasMany(Checkin);
 
+// Establishes User and Park Relationships for Checkins
 User.belongsToMany(Park, { as: 'checkedInUser', through: 'checkin', foreignKey: 'userId' });
 Park.belongsToMany(User, { as: 'parkId', through: 'checkin', foreignKey: 'parkId' });
 
+// Establishes User and Follower Relationships for Connections.
 User.belongsToMany(Follower, { as: 'followerId', through: 'connection', foreignKey: 'userId' });
 Follower.belongsToMany(User, { as: 'userId', through: 'connection', foreignKey: 'userId' });
 
