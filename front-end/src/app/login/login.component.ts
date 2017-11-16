@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
 	userInfo: any;
 	email: any;
 	password: any;
+  name: string;
 
   constructor(private authService: AuthService, private router: Router, private http: Http, private apiService: ApiService) { 
 
@@ -27,7 +28,7 @@ export class LoginComponent implements OnInit {
  signInWithGoogle() {
  	this.authService.signInWithGoogle()
  	.then((res) => {
- 		this.userInfo = JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]])
+ 		// this.userInfo = JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]])
  		let newUser = res.additionalUserInfo;
  		let firebaseId = this.userInfo.uid;
  		// console.log(newUser);
@@ -52,6 +53,19 @@ export class LoginComponent implements OnInit {
     this.authService.emailSignUp(this.email, this.password)
     .then((res) => {
     	console.log(res);
+      let firebaseId = res.G;
+      // console.log(newUser);
+      let userObject = {
+        firebase_id: firebaseId,
+        name: this.name,
+        email: res.email,
+        image: 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg'
+      }
+        this.apiService.createUser(userObject)
+        .subscribe(res => {
+          // console.log(res.json());
+        })
+      this.router.navigateByUrl('/map')
     })
     this.email,this.password = '';
   }
@@ -60,6 +74,7 @@ export class LoginComponent implements OnInit {
     this.authService.emailLogin(this.email, this.password)
     .then((res) => {
     	console.log(res);
+      this.router.navigateByUrl('/map')
     })
 	this.email,this.password = '';
 

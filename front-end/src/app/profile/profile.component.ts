@@ -11,7 +11,8 @@ import { AuthService} from '../services/auth.service';
 })
 export class ProfileComponent implements OnInit {
 
-  oneUser;
+  oneUser:any;
+  image: string = 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg';
 
   constructor(
   	private apiService: ApiService,
@@ -21,11 +22,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
   	
-	this.apiService.getOneUser(this.authService.grabUser())
-	.subscribe(response => {
-		// console.log(response.json());
-		this.oneUser = response.json();
-	})
+    this.oneUser = JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]]);
 	
   }
 

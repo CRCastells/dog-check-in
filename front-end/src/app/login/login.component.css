@@ -24,12 +24,12 @@ h1 {
 	@include add-gutter-size(50px);
 }
 
-#login {
+#loginform {
 	background: black;
 	border-radius: 10px;
 	color: white;
-	height: 20vh;
-	width: 100%;
+	height: auto;
+	width: auto;
 	margin: 30px 30px 30px 40px;
 	font-family: 'Sigmar One';
 	z-index: 1;
@@ -65,7 +65,7 @@ p {
 	margin: 18px;
 }
 
-#login:hover {
+#loginform:hover {
 	transition: all .5s ease-in-out;
 	opacity: 0.75;
 	transform: scale(1.2);
