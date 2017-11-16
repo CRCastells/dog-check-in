@@ -10,6 +10,7 @@ export class AuthGuardService {
   	private router: Router
   ) {}
 
+// authGaurd to only allow logged in users to navigate.
   canActivate(){
   	if(!this.authService.isLoggedIn()) {
   		this.router.navigateByUrl('');

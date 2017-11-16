@@ -38,7 +38,7 @@ signInWithGoogle() {
 		)
 }
 
-// Email Auth that is throwing an error and needs to be troubleshooted. 
+// Email Signup function
 
 emailSignUp(email: string, password: string) {
   return this._firebaseAuth.auth.createUserWithEmailAndPassword(email, password)
@@ -51,6 +51,7 @@ emailSignUp(email: string, password: string) {
     });
 }
 
+// Email Login Function
 emailLogin(email: string, password: string) {
   return this._firebaseAuth.auth.signInWithEmailAndPassword(email, password)
   .then(value => {

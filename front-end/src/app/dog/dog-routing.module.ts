@@ -7,7 +7,7 @@ import { DogEditComponent } from './dog-edit/dog-edit.component';
 import { DogNewComponent } from './dog-new/dog-new.component';
 import { DogShowComponent } from './dog-show/dog-show.component';
 
-
+// Dog Routes
 const aboutRoutes: Routes = [
     {
         path: 'dogs',

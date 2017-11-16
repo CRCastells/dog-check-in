@@ -26,13 +26,14 @@ export class DogShowComponent implements OnInit {
  	) { }
 
   ngOnInit() {
+    // Dog show page. Displays the dog on initiation of the page.
   	this.route.paramMap.subscribe(params => {
   		this.apiService.getOneDog(params.get('id')).subscribe(res => {
   			this.oneDog = res.json();
   		});
   	});
   }
-
+    // Delete Dog from the dog show page.
   deleteDog(oneDog){
   	this.apiService.deleteDog(oneDog).subscribe(res => {
   		this.router.navigateByUrl('profile');
