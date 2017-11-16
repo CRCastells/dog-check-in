@@ -5,7 +5,6 @@ import { Http } from '@angular/http';
 export class ApiService {
 
 	baseUrl: string;
-  user = JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]]);
 
   constructor(private http: Http) { 
     if(isDevMode()) {

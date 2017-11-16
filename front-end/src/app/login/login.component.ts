@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { Http } from '@angular/http';
 import { ApiService } from '../services/api-service.service';
+import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -14,10 +15,14 @@ export class LoginComponent implements OnInit {
 
 	user = null;
 	userInfo: any;
+	email: any;
+	password: any;
 
   constructor(private authService: AuthService, private router: Router, private http: Http, private apiService: ApiService) { 
 
  }
+
+ // Verification of Google SignIn
 
  signInWithGoogle() {
  	this.authService.signInWithGoogle()
@@ -42,6 +47,26 @@ export class LoginComponent implements OnInit {
  	})
  	.catch((err) => console.log(err));
  }
+
+ emailSignUp() {
+    this.authService.emailSignUp(this.email, this.password)
+    .then((res) => {
+    	console.log(res);
+    })
+    this.email,this.password = '';
+  }
+
+  emailLogin() {
+    this.authService.emailLogin(this.email, this.password)
+    .then((res) => {
+    	console.log(res);
+    })
+	this.email,this.password = '';
+
+
+  }
+
+
 
   ngOnInit() {
   }
