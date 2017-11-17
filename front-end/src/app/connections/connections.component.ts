@@ -13,7 +13,7 @@ export class ConnectionsComponent implements OnInit {
 
 // user is pulling from local storage and getting the uid from firebase
 	connections: any;
-  user = JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]]);
+  user: any;
 
   constructor(
   	private apiService: ApiService
@@ -21,7 +21,9 @@ export class ConnectionsComponent implements OnInit {
 
   ngOnInit() {
     // to display all users based on uid from firebase
-  	this.apiService.getAllUsers(this.user.uid).subscribe( res => {
+
+      this.user = JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]]);
+      this.apiService.getAllUsers(this.user.uid).subscribe( res => {
       this.connections = res.json();
       console.log(this.user);
       // console.log(this.connections);

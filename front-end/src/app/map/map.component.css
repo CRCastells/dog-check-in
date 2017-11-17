@@ -15,7 +15,7 @@ agm-map {
 	border-radius: 5px;
 }
 
-a, a:hover, a:focus {
+.tag, .tag:hover, .tag:focus {
 	color: white;
 	text-decoration: none;
 }

@@ -15,7 +15,7 @@
 			    <p><strong>Address: </strong>{{marker.address}}</p>
 			    <p><strong>Rating: </strong>{{marker.rating}}</p>
 			    <button (click)="checkIn(marker)" class="btn btn-success">Check In!</button>
-			    <button (click)="getDirections()" class="btn btn-primary"><a href="https://maps.google.com/?q={{marker.address}}" target="_blank">Navigate Here</a></button>
+			    <button (click)="getDirections()" class="btn btn-primary"><a class="tag" href="https://maps.google.com/?q={{marker.address}}" target="_blank">Navigate Here</a></button>
 			    <!-- Button trigger modal -->
 			    <button (click)="getCheckIns(marker)" type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">
 			      See Who is Here!

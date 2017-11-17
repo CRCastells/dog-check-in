@@ -16,6 +16,30 @@ Dog Check-In is a user-friendly social media site that connects dog owners and a
 ### Database ERD
 ![alt text](front-end/src/assets/DBerd.png "Db ERD")
 
+## User Survey
+
+The results of our user survey can be found [here](https://docs.google.com/spreadsheets/d/1RG9r9RBnV0dC8fGmJCs-H_Xowu9B6gJJjAQNRl28meI/edit#gid=1185723176).  We approached our survey to find out why people take their dogs to dog parks, what activities people like to do with their dogs and if they felt their dogs were friendly and enjoyed playing with other dogs. 
+
+Here is a list of the intitial questions:
+
+```
+What type of activities do you enjoy doing with your dog?
+
+How well does your dog socialize with other dogs?
+
+How involved is your dog in your social media presence?
+
+How does your dog influence your daily schedule?
+
+What influences your decision to take your dog to a dog park?
+
+Is social interaction important when going to a dog park?
+
+Provide a brief description of your dog and its personality.
+
+
+```
+
 
 ## Getting Started
 

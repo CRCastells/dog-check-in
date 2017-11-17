@@ -1,21 +1,33 @@
-<form #dogNewForm="ngForm" (ngSubmit)='saveDog(dogNewForm)' novalidate>
-	<label for="name">Name: </label>
-	<input name="name" #name="ngModel" ngModel required>
-	<show-errors [control]="name" ></show-errors>
-	<label for="breed">Breed: </label>
-	<input name="breed" #breed="ngModel" ngModel required>
-	<show-errors [control]="breed"></show-errors>
-	<label for="fixed">Fixed: </label>
-	<input type='checkbox' name="fixed" #fixed="ngModel" ngModel>
-	<show-errors [control]="fixed"></show-errors>
-	<label for="description">Description: </label>
-	<input name="description" #description="ngModel" ngModel required>
-	<show-errors [control]="description" ></show-errors>
-	<label for="age">Age: </label>
-	<input type='number' name="age" #age="ngModel" ngModel required>
-	<show-errors [control]="age"></show-errors>
-	<label for="image">Image URL: </label>
-	<input name="image" #image="ngModel" ngModel required pattern="(https?:\/\/.*\.(png|jpg))">
-	<show-errors [control]='image'></show-errors>
-	<input [disabled]=dogNewForm.invalid type="submit" value='SAVE' class="btn btn-success">
+<form class="container" #dogNewForm="ngForm" (ngSubmit)='saveDog(dogNewForm)' novalidate>
+  <div class="form-group">
+    <label for="name">Name: </label>
+    <input class="form-control" name="name" #name="ngModel" ngModel required>
+    <show-errors [control]="name"></show-errors>
+  </div>
+  <div class="form-group">
+    <label for="breed">Breed: </label>
+    <input class="form-control" name="breed" #breed="ngModel" ngModel required>
+    <show-errors [control]="breed"></show-errors>
+  </div>
+  <div class="form-group">
+    <label for="fixed">Fixed: </label>
+    <input class="form-control" type='checkbox' name="fixed" #fixed="ngModel" ngModel>
+    <show-errors [control]="fixed"></show-errors>
+  </div>
+  <div class="form-group">
+    <label for="description">Description: </label>
+    <input class="form-control" name="description" #description="ngModel" ngModel required>
+    <show-errors [control]="description"></show-errors>
+  </div>
+  <div class="form-group">
+    <label for="age">Age: </label>
+    <input class="form-control" type='number' name="age" #age="ngModel" ngModel required>
+    <show-errors [control]="age"></show-errors>
+  </div>
+  <div class="form-group">
+    <label for="image">Image URL: </label>
+    <input class="form-control" name="image" #image="ngModel" ngModel required pattern="(https?:\/\/.*\.(png|jpg))">
+    <show-errors [control]='image'></show-errors>
+  </div>
+  <input [disabled]=dogNewForm.invalid type="submit" value='SAVE' class="btn btn-success">
 </form>
