@@ -1,13 +1,13 @@
 const db = require('../models');
 const Dog = db.models.Dog;
 
-
+// All Dogs.  Not in use.
 function index(req, res) {
 	Dog.findAll().then(function(dogs) {
 		res.json(dogs);
 	});
 }
-
+// Show one Dog. 
 function show(req, res) {
 	Dog.findById(req.params.id)
 	.then(function(dog){
@@ -15,7 +15,7 @@ function show(req, res) {
 		else res.json(dog);
 	});
 }
-
+// New Dog
 function create(req, res) {
 	// console.log(req);
 	Dog.create(req.body).then(function(dog){
@@ -23,7 +23,7 @@ function create(req, res) {
 		else res.json(dog);
 	});
 }
-
+// Edit Dog
 function update(req, res) {
 	Dog.findById(req.params.id)
 	.then(function(dog){
@@ -34,7 +34,7 @@ function update(req, res) {
 		res.json(dog);
 	});
 }
-
+// Delete Dog
 function destroy(req, res) {
 	Dog.findById(req.params.id)
 	.then(function(dog){

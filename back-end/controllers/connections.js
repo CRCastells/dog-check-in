@@ -1,13 +1,14 @@
 const db = require('../models');
 const Connection = db.models.Connection;
 
+// All Connections 
 function index(req, res) {
 	console.log("index hit");
 	Connection.findAll().then(function(connections) {
 		res.json(connections);
 	});
 }
-
+// One Connection
 function show(req, res) {
 	Connection.findById(req.params.id)
 	.then(function(connection){
@@ -15,14 +16,14 @@ function show(req, res) {
 		else res.json(connection);
 	});
 }
-
+// New Connection
 function create(req, res) {
 	Connection.create(req.body).then(function(connection){
 		if(!connection) res.send("connection not saved");
 		else res.json(connection);
 	});
 }
-
+// Deletes Connection
 function destroy(req, res) {
 	Connection.findById(req.params.id)
 	.then(function(connection){

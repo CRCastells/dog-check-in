@@ -1,10 +1,12 @@
 const db = require('../models');
+// bringing in data models for Checkin and relationships
 const Checkin = db.models.Checkin;
 const Park = db.models.Park;
 const User = db.models.User;
 var Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
+// create checkin and establishing relationship for parks and users
 module.exports.create = (req, res) => {
     let park = req.body.marker;
     let firebase_id = req.body.user.uid;
@@ -24,13 +26,14 @@ module.exports.create = (req, res) => {
             		.then(response => {
             			// console.log(response);
             		});
-            })
+            });
         });
 };
 
+// Show checkins
 module.exports.show = (req, res) => {
-    console.log(new Date());
-    let park = req.body.marker;
+    let park = req.body.marker; // sets checked in park to map marker
+
     let checkinArray = [];
     // console.log("park:", park);
     Park.findOrCreate({where: park })
@@ -57,7 +60,7 @@ module.exports.show = (req, res) => {
                         // console.log(checkinArray);
                     });
                 });
-                setTimeout(function(){
+                setTimeout(function(){ // sets timeout on checkins
                     res.json(checkinArray);
                     // console.log(checkinArray);
                 }, 500);

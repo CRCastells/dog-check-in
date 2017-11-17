@@ -36,6 +36,7 @@ export class DogEditComponent implements OnInit {
       });
     });
   }
+  // Edit dog.  Includes form validations.
   updateDog(dogUpdateForm : NgForm) {
     let sendDog = {id:this.updatedDog.id}
     for (let prop in dogUpdateForm.form.value){

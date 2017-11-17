@@ -69,8 +69,4 @@ export class ApiService {
   	return this.http.delete(`${this.baseUrl}/parks/${deletedPark.id}`);
   }
 
-  //connections
-
-
-  //checkins
 }

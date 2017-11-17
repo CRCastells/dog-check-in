@@ -10,6 +10,7 @@
     </ng-template>
   </div>
   <div class="card-footer"></div>
-  <a routerLink='edit'><button class="btn btn-primary">EDIT {{oneDog.name}}</button></a><br>
+  <!-- Edit button routes to edit component-->
+  <a routerLink='edit'><button class="btn btn-primary">EDIT {{oneDog.name}}</button></a><br> 
   <div><button (click)='deleteDog(oneDog)' class="btn btn-danger">DELETE {{oneDog.name}}</button></div>
 </div>

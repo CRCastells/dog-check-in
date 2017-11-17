@@ -33,6 +33,7 @@ export class DogNewComponent implements OnInit {
 
   }
   
+  // New Dog. Only allows new dog creation based on user that owns dog. 
   saveDog(dogNewForm : NgForm){
     this.newDog = dogNewForm.form.value;
     this.apiService.getOneUser(JSON.parse(window.localStorage[Object.keys(window.localStorage)[0]]).uid)

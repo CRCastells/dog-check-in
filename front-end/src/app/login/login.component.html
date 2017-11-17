@@ -4,14 +4,55 @@
         <h1>Dog Check-In</h1>
       <div class="row">
         <div id="login" class="card col-md-5">
-          <form >
+          <form>
             <h3 id="card-h3" align="center">Login Form</h3>
               <button type="button" class="btn btn-block" (click)="signInWithGoogle()">
                           <i class="fa fa-google" aria-hidden="true"></i>
                           Login with Google
-              </button>                
+              </button> 
           </form>
+          <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" [(ngModel)]="email">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" [(ngModel)]="password">
+                    </div>
+
+                    <div class="form-group">
+                        <button type="buton" class="btn btn-block" (click)="emailLogin()">
+                          Login with Email
+                        </button>
+                        <button type="button" class="btn btn-block" (click)="emailSignUp()" >
+                        Sign Up with Email
+                      </button>
+                    </div>
         </div>
+
+        <!-- Nav tabs -->
+<!-- <ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#messages" role="tab">Messages</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#settings" role="tab">Settings</a>
+  </li>
+</ul> -->
+
+<!-- Tab panes -->
+<!-- <div class="tab-content">
+  <div class="tab-pane active" id="home" role="tabpanel">...</div>
+  <div class="tab-pane" id="profile" role="tabpanel">...</div>
+  <div class="tab-pane" id="messages" role="tabpanel">...</div>
+  <div class="tab-pane" id="settings" role="tabpanel">...</div>
+</div> -->
 
           
         <div id="description" class="card col-md-5">

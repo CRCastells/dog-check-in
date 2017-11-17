@@ -20,7 +20,7 @@ export class ProfileComponent implements OnInit {
   	) { }
 
   ngOnInit() {
-  	
+  	// Profile page. Uses grabUser function from authService to ensure logged in user is displayed on profile. 
 	this.apiService.getOneUser(this.authService.grabUser())
 	.subscribe(response => {
 		// console.log(response.json());

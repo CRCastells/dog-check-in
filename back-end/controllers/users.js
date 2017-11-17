@@ -7,7 +7,7 @@ const Op = Sequelize.Op;
 // const Connection = db.models.Connection;
 // const Checkin = db.models.Checkin;
 
-
+// Shows all Users.  Where firebase ID matches current user to not see your user. Includes Dogs.
 function index(req, res) {
   console.log(req.query);
   User.findAll({
@@ -21,7 +21,7 @@ function index(req, res) {
     res.json(users);
   });
 }
-
+// Find one user. Profile page so matching firebaseID and including Dogs for the User.
 function show(req, res) {
   User.findOne({
       where: { firebase_id: req.params.id },
@@ -32,7 +32,7 @@ function show(req, res) {
       else res.json(user);
     });
 }
-
+// Create new User. 
 function create(req, res) {
   // console.log(req.body);
   User.create(req.body).then(function(user) {
@@ -40,7 +40,7 @@ function create(req, res) {
     else res.json(user);
   });
 }
-
+// Edit User. Not in Use. 
 function update(req, res) {
   User.findById(req.params.id)
     .then(function(user) {
@@ -51,7 +51,7 @@ function update(req, res) {
       res.json(user);
     });
 }
-
+// Delete user. Not in Use. 
 function destroy(req, res) {
   User.findById(req.params.id)
     .then(function(user) {
